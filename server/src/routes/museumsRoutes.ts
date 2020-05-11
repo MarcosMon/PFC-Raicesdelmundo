@@ -1,5 +1,7 @@
 import { Router} from 'express';
 
+import museumsController from '../controller/museumsController';
+
 class MuseumsRoutes{
 
     public router : Router = Router();
@@ -8,7 +10,7 @@ class MuseumsRoutes{
         this.config();
     }
     config(): void{
-        this.router.get('/', (req, res) => res.send('Museum'));
+        this.router.get('/', museumsController.index );
     }
 
 }
