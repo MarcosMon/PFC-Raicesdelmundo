@@ -19,6 +19,10 @@ class MuseumsController{
         }
         res.status(404).json({text: "The museum doesn't exist "});
     }
+    public async create (req : Request, res : Response): Promise<void> {
+        await pool.query('INSERT INTO museums set ?', [req.body])
+        res.json({ message : 'Museum Saved'}) 
+    }
    
 
 }

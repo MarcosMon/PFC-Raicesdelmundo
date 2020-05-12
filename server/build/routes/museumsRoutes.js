@@ -13,6 +13,7 @@ class MuseumsRoutes {
     config() {
         this.router.get('/', museumsController_1.default.list);
         this.router.get('/:id', museumsController_1.default.getOne);
+        this.router.post('/', museumsController_1.default.create);
     }
 }
 const museumsRoutes = new MuseumsRoutes();
