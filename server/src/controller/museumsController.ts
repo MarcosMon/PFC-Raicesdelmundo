@@ -23,6 +23,12 @@ class MuseumsController{
         await pool.query('INSERT INTO museums set ?', [req.body])
         res.json({ message : 'Museum Saved'}) 
     }
+
+    public async delete (req : Request, res : Response): Promise<void>{
+        const { id } = req.params;
+        await pool.query('DELETE FROM museums WHERE id = ?', [id]);
+        res.json({message: 'The museum was deleted'});
+    }
    
 
 }

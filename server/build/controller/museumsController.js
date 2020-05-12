@@ -40,6 +40,13 @@ class MuseumsController {
             res.json({ message: 'Museum Saved' });
         });
     }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('DELETE FROM museums WHERE id = ?', [id]);
+            res.json({ message: 'The museum was deleted' });
+        });
+    }
 }
 const museumsController = new MuseumsController();
 exports.default = museumsController;
