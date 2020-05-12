@@ -29,6 +29,12 @@ class MuseumsController{
         await pool.query('DELETE FROM museums WHERE id = ?', [id]);
         res.json({message: 'The museum was deleted'});
     }
+
+    public async update (req : Request, res : Response): Promise<void>{
+        const  { id } = req.params;
+        await pool.query('UPDATE museums set ? WHERE id = ?', [req.body, id]);
+        res.json({message: 'The museum was updated'});
+    }
    
 
 }

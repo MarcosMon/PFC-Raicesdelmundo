@@ -47,6 +47,13 @@ class MuseumsController {
             res.json({ message: 'The museum was deleted' });
         });
     }
+    update(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('UPDATE museums set ? WHERE id = ?', [req.body, id]);
+            res.json({ message: 'The museum was updated' });
+        });
+    }
 }
 const museumsController = new MuseumsController();
 exports.default = museumsController;

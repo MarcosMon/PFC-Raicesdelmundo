@@ -14,6 +14,7 @@ class MuseumsRoutes{
         this.router.get('/:id', museumsController.getOne );
         this.router.post('/', museumsController.create);
         this.router.delete('/:id', museumsController.delete);
+        this.router.put('/:id', museumsController.update);
     }
 
 }
