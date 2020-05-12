@@ -11,7 +11,8 @@ class MuseumsRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', museumsController_1.default.index);
+        this.router.get('/', museumsController_1.default.list);
+        this.router.get('/:id', museumsController_1.default.getOne);
     }
 }
 const museumsRoutes = new MuseumsRoutes();

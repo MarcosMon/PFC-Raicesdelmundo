@@ -10,7 +10,9 @@ class MuseumsRoutes{
         this.config();
     }
     config(): void{
-        this.router.get('/', museumsController.index );
+        this.router.get('/', museumsController.list );
+        this.router.get('/:id', museumsController.getOne );
+        
     }
 
 }
