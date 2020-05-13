@@ -7,6 +7,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MuseumFormComponent } from './components/museum-form/museum-form.component';
 import { MuseumListComponent } from './components/museum-list/museum-list.component';
 
+import {MuseumsService} from './services/museums.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { MuseumListComponent } from './components/museum-list/museum-list.compon
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MuseumsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
