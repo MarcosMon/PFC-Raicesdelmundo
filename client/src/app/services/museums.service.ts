@@ -18,8 +18,13 @@ export class MuseumsService {
       return this.http.get(`${this.API_URI}/museums/${id}`)
 
     }
+
+    deleteMuseum(id: string){
+      return this.http.delete(`${this.API_URI}/museums/${id}`)
+    }
+
     saveMuseum(museum : Museum){
       return this.http.post(`${this.API_URI}/museums`, museum)
     }
-   }
 
+   }
