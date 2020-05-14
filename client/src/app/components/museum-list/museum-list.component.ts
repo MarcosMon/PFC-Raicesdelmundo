@@ -14,6 +14,10 @@ export class MuseumListComponent implements OnInit {
   constructor(private museumsService : MuseumsService) { }
 
   ngOnInit() {
+    this.getMuseums();
+  }
+
+  getMuseums(){
     this.museumsService.getMuseums().subscribe(
       res => {
         this.museums = res;
@@ -21,6 +25,17 @@ export class MuseumListComponent implements OnInit {
       },
       err => console.log(err)
 
+    );
+  }
+
+  deleteMuseum(id: string){
+
+    this.museumsService.deleteMuseum(id).subscribe(
+      res => {
+        console.log(res)
+        this.getMuseums();
+      },
+      err => console.log(err)
     );
   }
 

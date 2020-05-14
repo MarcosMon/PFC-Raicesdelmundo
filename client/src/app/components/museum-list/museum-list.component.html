@@ -6,7 +6,7 @@
 
       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
            {{museum.name}}
-          <button class="btn btn-danger">
+          <button class="btn btn-danger" (click)="deleteMuseum(museum.id)">
             <i class="far fa-trash-alt"></i>
           </button>
       </div>
