@@ -1,0 +1,19 @@
+  <div class="col-md-4" *ngFor="let museum of museums">
+
+    <div class="card text-center">
+
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+           {{museum.name}}
+          <button class="btn btn-danger" (click)="deleteMuseum(museum.id)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+      </div>
+      <img class="card-img-top" [src]="museum.image" alt="">
+      <div class="card-body">
+            <p>{{museum.description}}</p>
+            <a [routerLink]="['/museums/edit/', museum.id]" class="btn btn-info btn-block">EDIT MUSEUM</a>
+      </div>
+    </div>
+
+    </div>
+
