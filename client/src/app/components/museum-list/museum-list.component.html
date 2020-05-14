@@ -1,5 +1,3 @@
-<div class="container">
-
   <div class="col-md-4" *ngFor="let museum of museums">
 
     <div class="card text-center">
@@ -13,14 +11,9 @@
       <img class="card-img-top" [src]="museum.image" alt="">
       <div class="card-body">
             <p>{{museum.description}}</p>
-            <a href="" class="btn btn-info btn-block">EDIT MUSEUM</a>
+            <a [routerLink]="['/museums/edit/', museum.id]" class="btn btn-info btn-block">EDIT MUSEUM</a>
       </div>
     </div>
 
     </div>
 
-
-
-
-
-</div>

@@ -7,7 +7,7 @@ import { MuseumFormComponent } from '../app/components/museum-form/museum-form.c
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/museums',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: MuseumFormComponent
   },
   {
-    path: 'museums/add/:id',
+    path: 'museums/edit/:id',
     component: MuseumFormComponent
   }
 ];

@@ -26,7 +26,7 @@ export class MuseumsService {
     return this.http.post(`${this.API_URI}/museums`, museum);
   }
 
-  updateMuseum(id : string, updateMuseum : Museum): Observable<Museum> {
+  updateMuseum(id : string | number, updateMuseum : Museum): Observable<Museum> {
     return this.http.put(`${this.API_URI}/museums/${id}`,updateMuseum);
   }
 }
