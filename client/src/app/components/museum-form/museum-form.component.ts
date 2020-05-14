@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Museum } from '../../models/museums';
+import {Route, Router} from '@angular/router';
 import {MuseumsService} from '../../services/museums.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class MuseumFormComponent implements OnInit {
     created_at: new Date()
   };
 
-  constructor( private MuseumsService : MuseumsService) { }
+  constructor( private MuseumsService : MuseumsService, private router : Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,7 @@ export class MuseumFormComponent implements OnInit {
     this.MuseumsService.saveMuseum(this.museum).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['/museums']);
       },
       err => console.log(err)
     )

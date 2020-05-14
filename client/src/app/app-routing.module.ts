@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'museums/add',
     component: MuseumFormComponent
+  },
+  {
+    path: 'museums/add/:id',
+    component: MuseumFormComponent
   }
 ];
 
