@@ -4,6 +4,9 @@ import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
 import museumsRoutes from './routes/museumsRoutes';
+import authentification from './routes/authentification';
+import signinRoutes from './routes/signinRoutes';
+
 
 class Server{
 
@@ -27,6 +30,8 @@ class Server{
     routes(): void{
         this.app.use('/', indexRoutes);
         this.app.use('/api/museums', museumsRoutes);
+        this.app.use('/api/register', authentification);
+        this.app.use('/api/login', signinRoutes);
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {

@@ -8,6 +8,8 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const museumsRoutes_1 = __importDefault(require("./routes/museumsRoutes"));
+const authentification_1 = __importDefault(require("./routes/authentification"));
+const signinRoutes_1 = __importDefault(require("./routes/signinRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -24,6 +26,8 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/museums', museumsRoutes_1.default);
+        this.app.use('/api/register', authentification_1.default);
+        this.app.use('/api/login', signinRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
