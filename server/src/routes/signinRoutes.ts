@@ -10,7 +10,7 @@ class SignInRoutes{
         this.config();
     }
     config(): void{
-        this.router.get('/', signInController.list );
+        this.router.post('/', signInController.list );
         
     }
 

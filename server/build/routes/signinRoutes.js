@@ -11,7 +11,7 @@ class SignInRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', signinController_1.default.list);
+        this.router.post('/', signinController_1.default.list);
     }
 }
 const signInRoutes = new SignInRoutes();

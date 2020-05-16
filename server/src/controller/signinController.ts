@@ -5,8 +5,8 @@ import pool from '../database';
 
 class SignInController{
 
-    public async list (req : Request, res : Response): Promise<void>{
-        
+    public async list (req : Request, res : Response): Promise<any>{
+        console.log(req.body);
         const rows = await pool.query('SELECT * FROM users WHERE username = ?', req.body.username);
         const user = rows[0];
         if(rows.length > 0){

@@ -17,6 +17,7 @@ const database_1 = __importDefault(require("../database"));
 class SignInController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.body);
             const rows = yield database_1.default.query('SELECT * FROM users WHERE username = ?', req.body.username);
             const user = rows[0];
             if (rows.length > 0) {

@@ -27,6 +27,7 @@ class AuthentificationController {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let user;
+            console.log(req.body);
             helpers_1.default.encryptPassword(req.body.password).then((hash) => {
                 user = {
                     username: req.body.username,

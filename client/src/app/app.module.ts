@@ -10,13 +10,17 @@ import { MuseumFormComponent } from './components/museum-form/museum-form.compon
 import { MuseumListComponent } from './components/museum-list/museum-list.component';
 
 import {MuseumsService} from './services/museums.service';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     MuseumFormComponent,
-    MuseumListComponent
+    MuseumListComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
