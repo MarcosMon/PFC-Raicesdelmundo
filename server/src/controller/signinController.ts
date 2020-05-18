@@ -12,9 +12,8 @@ class SignInController{
         if(rows.length > 0){
             
             Auth.compare(req.body.password,user.password).then((validUser) => {
-                const user = rows[0];
                 if(validUser){
-                    res.json({message: 'Bienvenido ' + user.username});    
+                    res.json({message: 'respuesta ' + user.id});    
                 }
                 else{
                     res.json({message: 'contraseña incorrecta'}); 

@@ -10,10 +10,11 @@ import { MuseumsService } from "../../services/museums.service";
 })
 export class MuseumFormComponent implements OnInit {
   @HostBinding("class") classes = "row";
-
+  userID = localStorage.getItem('id');
   museum: Museum = {
     id: 0,
     name: "",
+    user_id: this.userID,
     price: 0,
     description: "",
     image: "",

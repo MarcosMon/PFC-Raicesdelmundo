@@ -16,10 +16,30 @@ const database_1 = __importDefault(require("../database"));
 class MuseumsController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM museums', function (err, result, fields) {
+            yield database_1.default.query("SELECT * FROM museums ", function (err, result) {
                 if (err)
                     throw err;
-                res.json(result);
+                if (result.length > 0) {
+                    res.json(result);
+                }
+                else {
+                    res.status(404).json({ text: "no hay museos" });
+                }
+            });
+        });
+    }
+    listMyMuseums(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = req.params.id;
+            yield database_1.default.query("SELECT * FROM museums WHERE museums.user_id = " + id, function (err, result) {
+                if (err)
+                    throw err;
+                if (result.length > 0) {
+                    res.json(result);
+                }
+                else {
+                    res.status(404).json({ text: "no tiene museos" });
+                }
             });
         });
     }

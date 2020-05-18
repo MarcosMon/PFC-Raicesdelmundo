@@ -22,9 +22,8 @@ class SignInController {
             const user = rows[0];
             if (rows.length > 0) {
                 helpers_1.default.compare(req.body.password, user.password).then((validUser) => {
-                    const user = rows[0];
                     if (validUser) {
-                        res.json({ message: 'Bienvenido ' + user.username });
+                        res.json({ message: 'respuesta ' + user.id });
                     }
                     else {
                         res.json({ message: 'contraseña incorrecta' });

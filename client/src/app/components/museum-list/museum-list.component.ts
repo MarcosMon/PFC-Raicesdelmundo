@@ -9,31 +9,32 @@ import {MuseumsService} from '../../services/museums.service'
 })
 export class MuseumListComponent implements OnInit {
   @HostBinding('class') classes = 'row';
-  museums: any = [];
+  allmuseums: any = [];
 
   constructor(private museumsService : MuseumsService) { }
 
   ngOnInit() {
-    this.getMuseums();
+    this.getAllMuseums();
   }
 
-  getMuseums(){
-    this.museumsService.getMuseums().subscribe(
+  getAllMuseums(){
+    this.museumsService.getAllMuseums().subscribe(
       res => {
-        this.museums = res;
-        console.log(this.museums);
+        this.allmuseums = res;
+        console.log(this.allmuseums);
       },
       err => console.log(err)
 
     );
   }
 
+
   deleteMuseum(id: string){
 
     this.museumsService.deleteMuseum(id).subscribe(
       res => {
         console.log(res)
-        this.getMuseums();
+        this.getAllMuseums();
       },
       err => console.log(err)
     );

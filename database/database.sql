@@ -8,7 +8,9 @@ CREATE TABLE museums(
     description VARCHAR(255),
     price DECIMAL(2),
     image VARCHAR(200),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    user_id INT(11),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 DESCRIBE museums;

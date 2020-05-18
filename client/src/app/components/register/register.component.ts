@@ -8,7 +8,7 @@ import { Route, Router, ActivatedRoute } from "@angular/router";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  mensaje: any = [];
   user = {
     id: 0,
     username: "",
@@ -31,10 +31,16 @@ export class RegisterComponent implements OnInit {
     this.UsersService.createUser(this.user).subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(["/museums"]);
+        this.mensaje = res;
+
+        if(this.mensaje.message.includes('Usuario creado')){
+          this.router.navigate(["/profile"])
+        }
       },
       (err) => console.log(err)
     );
   }
+
+
 
 }

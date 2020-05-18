@@ -28,6 +28,11 @@ export class LoginComponent implements OnInit {
 
         console.log(res);
         this.mensaje = res;
+        if(this.mensaje.message.includes('respuesta')){
+          this.router.navigateByUrl('/profile', { state: { hello: res } });
+          this.UsersService.logUserIn();
+          localStorage.setItem('id', this.mensaje.message.substr(10,11));
+        }
 
       },
       (err) => console.log(err)
