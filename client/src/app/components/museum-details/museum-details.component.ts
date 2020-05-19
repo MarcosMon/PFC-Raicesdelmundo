@@ -9,7 +9,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./museum-details.component.css']
 })
 export class MuseumDetailsComponent implements OnInit {
-  curiosidad:any = {};
+  museum:any = {};
   constructor( private activatedRoute: ActivatedRoute,
     private MuseumsService:MuseumsService, private location:Location) {
 
@@ -20,7 +20,7 @@ export class MuseumDetailsComponent implements OnInit {
     const params = this.activatedRoute.snapshot.params;
     this.MuseumsService.getOneMuseum(params.id).subscribe(
       (res) => {
-        this.curiosidad = res;
+        this.museum = res;
         console.log(res)
       },
       (err) => console.log(err)

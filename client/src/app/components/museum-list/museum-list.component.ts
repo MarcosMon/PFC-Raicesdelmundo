@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Route, Router, ActivatedRoute } from "@angular/router";
 
 import {MuseumsService} from '../../services/museums.service'
 
@@ -11,7 +12,9 @@ export class MuseumListComponent implements OnInit {
   @HostBinding('class') classes = 'row';
   allmuseums: any = [];
 
-  constructor(private museumsService : MuseumsService) { }
+  constructor(private museumsService : MuseumsService,
+    private router: Router,
+    private activateddRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.getAllMuseums();
@@ -26,6 +29,10 @@ export class MuseumListComponent implements OnInit {
       err => console.log(err)
 
     );
+  }
+  showMuseum(nombre:string){
+
+    this.router.navigate(['details/museums/',nombre]);
   }
 
 

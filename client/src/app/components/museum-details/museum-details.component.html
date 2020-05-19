@@ -1,11 +1,69 @@
-<p>museum-details works!</p>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.name }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.description }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.phone }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.postalcode }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.price }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.website }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.email }} </u></h3>
-<h3 class="text-center m-md-3  "><u>{{ curiosidad.openinghours }} </u></h3>
+  <div class="container">
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+      <div class="col-md-6 px-0">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSODNtoo4oFeS0DBBTcK2Gx-OhCbVm837oYs_0vXMpjGyYwW_0P&usqp=CAU"/>
 
-{{ curiosidad.name}}
+      </div>
+    </div>
+  </div>
+
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+          {{museum.name}}
+        </h3>
+        <div class="blog-post">
+          {{museum.description}}
+        </div><!-- /.blog-post -->
+
+      </div><!-- /.blog-main -->
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-3">
+          <h4 class="font-italic">Contact Information</h4>
+          <ol class="list-unstyled mb-0">
+            <li>PHONE</li>
+            <b>{{museum.phone}}</b>
+            <li>E-MAIL</li>
+            <b>{{museum.email}}</b>
+            <li>WEBSITE</li>
+            <b>{{museum.website}}</b>
+          </ol>
+        </div>
+
+        <div class="p-3">
+          <h4 class="font-italic">Opening hours</h4>
+          <ol class="list-unstyled mb-0">
+            <li>TUESDAY</li>
+            <b>{{museum.openinghours}}</b>
+            <li>WEDNESDAY</li>
+            <b>{{museum.openinghours}}</b>
+            <li>THURSDAY</li>
+            <b>{{museum.openinghours}}</b>
+            <li>FRIDAY</li>
+            <b>{{museum.openinghours}}</b>
+            <li>SATURDAY</li>
+            <b>{{museum.openinghours}}</b>
+            <li>SUNDAY</li>
+            <b>{{museum.openinghours}}</b>
+          </ol>
+        </div>
+
+        <div class="p-3">
+          <h4 class="font-italic">Price</h4>
+          <ol class="list-unstyled mb-0">
+            <li>Adults</li>
+            <b>{{museum.price + "€"}}</b>
+            <li>Children</li>
+            <b>{{museum.price + "€"}}</b>
+            <li>Students</li>
+            <b>{{museum.price + "€"}}</b>
+          </ol>
+        </div>
+      </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->
+

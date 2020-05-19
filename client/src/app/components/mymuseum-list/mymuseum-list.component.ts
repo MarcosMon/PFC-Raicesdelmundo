@@ -35,12 +35,13 @@ export class MymuseumListComponent implements OnInit {
     this.museumsService.deleteMuseum(id).subscribe(
       res => {
         console.log(res)
-        this.getMuseums();      },
+        this.getMuseums();
+      },
       err => console.log(err)
     );
   }
 
-  verCuriosidad(nombre:string){
+  showMuseum(nombre:string){
 
     this.router.navigate(['details/museums/',nombre]);
 

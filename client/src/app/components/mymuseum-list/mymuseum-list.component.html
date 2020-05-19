@@ -1,20 +1,26 @@
-<div class="col-md-4" *ngFor="let museum of museums">
+  <div class="album py-5 bg-light">
+    <div class="container">
 
-  <div class="card text-center">
-
-    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-         {{museum.name}}
-        <button class="btn btn-danger" (click)="deleteMuseum(museum.id)">
-          <i class="far fa-trash-alt"></i>
-        </button>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let museum of museums">
+          <div class="card mb-4 box-shadow">
+            <div class="card-header  bg-dark text-white d-flex justify-content-center align-items-center">
+              {{museum.name}}
+         </div>
+            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSODNtoo4oFeS0DBBTcK2Gx-OhCbVm837oYs_0vXMpjGyYwW_0P&usqp=CAU" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">{{museum.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" (click)="showMuseum(museum.id)" class="btn btn-sm btn-outline-secondary" >View</button>
+                  <button type="button" [routerLink]="['/museums/edit/', museum.id]" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" (click)="deleteMuseum(museum.id)" class="btn btn-sm btn-outline-secondary">Delete</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <img class="card-img-top" [src]="museum.image" alt="">
-    <div class="card-body">
-          <p>{{museum.description}}</p>
-          <a [routerLink]="['/museums/edit/', museum.id]" class="btn btn-info btn-block">EDIT MUSEUM</a>
-    </div>
-    <button (click)="verCuriosidad(museum.id)" type="button"   class=" float-right btn btn-primary btn-lg active botoncitoo">Seguir leyendo</button>
   </div>
-
-  </div>
-
