@@ -26,7 +26,6 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/museums', museumsRoutes_1.default);
-        this.app.use('/api/users/museums', museumsRoutes_1.default);
         this.app.use('/api/register', authentification_1.default);
         this.app.use('/api/login', signinRoutes_1.default);
     }

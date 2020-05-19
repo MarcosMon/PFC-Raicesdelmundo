@@ -29,15 +29,4 @@ export class MuseumListComponent implements OnInit {
   }
 
 
-  deleteMuseum(id: string){
-
-    this.museumsService.deleteMuseum(id).subscribe(
-      res => {
-        console.log(res)
-        this.getAllMuseums();
-      },
-      err => console.log(err)
-    );
-  }
-
 }

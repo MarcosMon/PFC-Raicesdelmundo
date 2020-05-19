@@ -11,7 +11,8 @@ class SignInRoutes{
     }
     config(): void{
         this.router.post('/', signInController.list );
-        
+        this.router.get('/users/:id', signInController.listMyMuseums)
+
     }
 
 }

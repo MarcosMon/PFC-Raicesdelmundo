@@ -17,23 +17,10 @@ class MuseumsController{
           });
         }
 
-
-    public async listMyMuseums(req: Request, res: Response): Promise<any> {
-        
-        const id = req.params.id;
-        await pool.query("SELECT * FROM museums WHERE museums.user_id = " + id , 
-        function (err : any, result : any) {
-            if (err) throw err;
-            if (result.length > 0) {
-              res.json(result);
-            } else {
-              res.status(404).json({ text: "no tiene museos" });
-            }
-          });
-        }
         
         public async getOne (req : Request, res : Response): Promise<any> {
             const { id } = req.params;
+            console.log([res]);
             const museums = await pool.query('SELECT * FROM museums WHERE id = ?', [id]);
             console.log(museums);
             if  (museums.length > 0){

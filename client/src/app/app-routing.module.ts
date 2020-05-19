@@ -7,6 +7,7 @@ import { RegisterComponent } from '../app/components/register/register.component
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MymuseumListComponent } from './components/mymuseum-list/mymuseum-list.component';
+import { MuseumDetailsComponent } from './components/museum-details/museum-details.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'users/museums/:id',
     component: MymuseumListComponent
+  },
+  {
+    path: 'details/museums/:id',
+    component: MuseumDetailsComponent
   },
   {
     path: 'museums/add',

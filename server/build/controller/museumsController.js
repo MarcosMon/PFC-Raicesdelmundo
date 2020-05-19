@@ -28,24 +28,10 @@ class MuseumsController {
             });
         });
     }
-    listMyMuseums(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const id = req.params.id;
-            yield database_1.default.query("SELECT * FROM museums WHERE museums.user_id = " + id, function (err, result) {
-                if (err)
-                    throw err;
-                if (result.length > 0) {
-                    res.json(result);
-                }
-                else {
-                    res.status(404).json({ text: "no tiene museos" });
-                }
-            });
-        });
-    }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
+            console.log([res]);
             const museums = yield database_1.default.query('SELECT * FROM museums WHERE id = ?', [id]);
             console.log(museums);
             if (museums.length > 0) {

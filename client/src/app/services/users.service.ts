@@ -17,19 +17,15 @@ export class UsersService {
   createUser(user) {
     return this.http.post(`${this.API_URI}/register`, user);
   }
-  private _loggedIn: ReplaySubject<boolean> = new ReplaySubject<boolean>();
+
 
   public logUserIn() {
-    this._loggedIn.next( true );
+    localStorage.setItem('logeado', 'true');
+
   }
 
   public logUserOut() {
-    this._loggedIn.next( false );
+    localStorage.setItem('logeado', 'false');
   }
-
-  public getUserLoggedInObs(): Observable<boolean> {
-    return this._loggedIn.asObservable();
-  }
-
 
 }

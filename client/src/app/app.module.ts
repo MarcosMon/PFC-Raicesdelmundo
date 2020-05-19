@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MymuseumListComponent } from './components/mymuseum-list/mymuseum-list.component';
+import { MuseumDetailsComponent } from './components/museum-details/museum-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MymuseumListComponent } from './components/mymuseum-list/mymuseum-list.
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    MymuseumListComponent
+    MymuseumListComponent,
+    MuseumDetailsComponent
   ],
   imports: [
     BrowserModule,

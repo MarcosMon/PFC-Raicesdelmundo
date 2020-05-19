@@ -13,6 +13,7 @@
           <p>{{museum.description}}</p>
           <a [routerLink]="['/museums/edit/', museum.id]" class="btn btn-info btn-block">EDIT MUSEUM</a>
     </div>
+    <button (click)="verCuriosidad(museum.id)" type="button"   class=" float-right btn btn-primary btn-lg active botoncitoo">Seguir leyendo</button>
   </div>
 
   </div>

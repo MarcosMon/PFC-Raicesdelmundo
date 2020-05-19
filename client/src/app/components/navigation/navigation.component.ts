@@ -11,14 +11,24 @@ export class NavigationComponent implements OnInit {
   public userLoggedInObs: Observable<boolean>;
   userLogOut;
   userID = localStorage.getItem('id');
+  log : any = localStorage.getItem('logeado');
 constructor( private UsersService: UsersService ) {
-  this.userLoggedInObs = UsersService.getUserLoggedInObs()
+
 }
 
   ngOnInit() {
+
   }
   logOut(){
     this.UsersService.logUserOut();
+    localStorage.setItem('logeado','false');
+  }
+  islogged(){
+    return  localStorage.getItem('logeado');
   }
 
-}
+
+  }
+
+
+

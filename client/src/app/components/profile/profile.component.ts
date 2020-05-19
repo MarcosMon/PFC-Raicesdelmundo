@@ -12,7 +12,6 @@ export class ProfileComponent implements OnInit {
 id;
 public userLoggedInObs: Observable<boolean>;
 constructor( private UsersService: UsersService ) {
-  this.userLoggedInObs = UsersService.getUserLoggedInObs()
 }
 
   ngOnInit() {

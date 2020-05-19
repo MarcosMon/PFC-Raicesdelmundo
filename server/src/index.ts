@@ -30,7 +30,6 @@ class Server{
     routes(): void{
         this.app.use('/', indexRoutes);
         this.app.use('/api/museums', museumsRoutes);
-        this.app.use('/api/users/museums', museumsRoutes);
         this.app.use('/api/register', authentification);
         this.app.use('/api/login', signinRoutes);
     }

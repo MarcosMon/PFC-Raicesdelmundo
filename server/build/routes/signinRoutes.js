@@ -12,6 +12,7 @@ class SignInRoutes {
     }
     config() {
         this.router.post('/', signinController_1.default.list);
+        this.router.get('/users/:id', signinController_1.default.listMyMuseums);
     }
 }
 const signInRoutes = new SignInRoutes();
