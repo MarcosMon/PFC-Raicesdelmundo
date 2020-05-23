@@ -1,8 +1,9 @@
 <div *ngIf="islogged() == 'true'">
 
   <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-
-      <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
+<div style="margin-right:7px">
+      <img src="../../../assets/logo.png" width="45"  height="45" alt="" loading="lazy">
+ </div>
      <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
@@ -34,7 +35,9 @@
 
 <div *ngIf="islogged() == 'false'">
 <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-  <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
+  <div style="margin-right:7px">
+    <img src="../../../assets/logo.png" width="45"  height="45" alt="" loading="lazy">
+</div>
      <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>

@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UsersService } from "../../services/users.service";
 import { Route, Router, ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+  // encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
   mensaje: any = [];
   user = {
     id: 0,
     username: "",
-    password: 0
+    password: ""
   };
   constructor(private UsersService: UsersService,
     private router: Router,

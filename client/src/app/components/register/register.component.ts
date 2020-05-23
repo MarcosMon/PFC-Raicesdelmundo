@@ -5,14 +5,15 @@ import { Route, Router, ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+
 })
 export class RegisterComponent implements OnInit {
   mensaje: any = [];
   user = {
     id: 0,
     username: "",
-    password: 0,
+    password: "",
     fullname: "",
     created_at: new Date()
   };

@@ -9,7 +9,6 @@ import { Route, Router, ActivatedRoute } from "@angular/router";
   styleUrls: ['./mymuseum-list.component.css']
 })
 export class MymuseumListComponent implements OnInit {
-  @HostBinding('class') classes = 'row';
   museums: any = [];
   constructor(private museumsService : MuseumsService,
     private router: Router,

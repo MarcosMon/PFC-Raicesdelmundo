@@ -1,39 +1,21 @@
-<section>
+<body>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-        <div class="row">
-          <div class="col text-center">
-            <h1>Login</h1>
-            <p class="text-h3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. </p>
-          </div>
-        </div>
-        <div class="row align-items-center">
-        </div>
-        <div class="row align-items-center mt-4">
-          <div class="col">
-            <input type="email" [(ngModel)]="user.username" class="form-control" placeholder="Username">
-          </div>
-        </div>
-        <div class="row align-items-center mt-4">
-          <div class="col">
-            <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="Password">
-          </div>
-        </div>
-        <div class="row justify-content-start mt-4">
-          <div class="col">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">
-                I Read and Accept <a href="">Terms and Conditions</a>
-              </label>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="login-form">
+          <form >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username</label>
+              <input type="text" [(ngModel)]="user.username" class="form-control" id="exampleInputEmail1" placeholder="Enter username" name="username">
             </div>
-            <button class="btn btn-primary mt-4" (click)="getUsers()">Submit</button>
-            {{mensaje.message}}
-          </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" [(ngModel)]="user.password" class="form-control" id="exampleInputEmail12" placeholder="Enter password" name="password">
+            </div>
+            <button class="btn btn-primary mt-4" (click)="getUsers()">Login</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
-</section>
-
+</body>

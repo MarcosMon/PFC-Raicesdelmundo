@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Route, Router, ActivatedRoute } from "@angular/router";
 
 import {MuseumsService} from '../../services/museums.service'
@@ -9,7 +9,6 @@ import {MuseumsService} from '../../services/museums.service'
   styleUrls: ['./museum-list.component.css']
 })
 export class MuseumListComponent implements OnInit {
-  @HostBinding('class') classes = 'row';
   allmuseums: any = [];
 
   constructor(private museumsService : MuseumsService,
