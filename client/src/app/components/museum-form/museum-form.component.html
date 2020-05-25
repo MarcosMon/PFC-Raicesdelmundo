@@ -87,7 +87,46 @@
       </div>
       <div class="col-sm-6 pb-3">
         <div class="form-group">
-          <label for="exampleCtrl">City</label>
+          <label for="exampleCtrl">Direction</label>
+          <input
+            type="text"
+            name="Direction"
+            [(ngModel)]="museum.direction"
+            placeholder="Direction"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Country</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Country"
+            [(ngModel)]="museum.country"
+            placeholder="Country"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Province</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Province"
+            [(ngModel)]="museum.province"
+            placeholder="Province"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 pb-3">
+        <label for="exampleCtrl">City</label>
+        <div class="form-group">
           <input
             type="text"
             name="City"
@@ -99,30 +138,26 @@
         </div>
       </div>
       <div class="col-sm-3 pb-3">
-        <label for="exampleSt">Province</label> <select class="form-control custom-select" id="exampleSt">
-          <option class="text-white bg-warning">
-            Pick a Province
-          </option>
-          <option value="AL">
-            Baleares
-          </option>
-          <option value="AK">
-            Malaga
-          </option>
-          <option value="AZ">
-            Madrid
-          </option>
-
-        </select>
-      </div>
-      <div class="col-sm-3 pb-3">
         <label for="exampleCtrl">Postal Code</label>
         <div class="form-group">
           <input
             type="text"
-            name="PostalCode"
+            name="Postal Code"
             [(ngModel)]="museum.postalcode"
             placeholder="Postal Code"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Colection Period</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Colection Period"
+            [(ngModel)]="museum.colection_period"
+            placeholder="Colection Period"
             class="form-control"
             autofocus
           />

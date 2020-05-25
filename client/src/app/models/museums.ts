@@ -10,7 +10,10 @@ export interface Museum{
   openinghours?: string;
   city? : string;
   province? : string;
+  country? : string;
+  direction? : string;
   postalcode? : string;
+  colection_period? : string;
   image? : string;
   created_at? : Date;
 }
