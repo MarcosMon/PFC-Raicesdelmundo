@@ -27,6 +27,4 @@ export class MuseumDetailsComponent implements OnInit {
     );
   }
 
-
-
 }
