@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   getUsers() {
-
     console.log(this.user);
     this.UsersService.getUser(this.user).subscribe(
       (res) => {
@@ -30,10 +29,11 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.mensaje = res;
         if(this.mensaje.message.includes('respuesta')){
-          this.router.navigateByUrl('/profile', { state: { hello: res } });
+          this.router.navigateByUrl('/profile', { state: { hello: this.mensaje.message } });
           localStorage.setItem('logeado', 'true');
-          localStorage.setItem('id', this.mensaje.message.substr(10,11));
-
+          console.log(this.mensaje.message.substring(10,11));
+          localStorage.setItem('id', this.mensaje.message.substring(10,11));
+          localStorage.setItem('usuario', this.mensaje.message.substring(11,30));
         }
 
       },

@@ -9,14 +9,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-id;
-public userLoggedInObs: Observable<boolean>;
+
+usuario : any = localStorage.getItem('usuario');
 constructor( private UsersService: UsersService ) {
 }
 
   ngOnInit() {
-    this.id = window.history.state;
-
   }
+
+
+
 
 }
