@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MymuseumListComponent } from './components/mymuseum-list/mymuseum-list.component';
 import { MuseumDetailsComponent } from './components/museum-details/museum-details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ProfileComponent,
     MymuseumListComponent,
     MuseumDetailsComponent,
-    FooterComponent
+    FooterComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

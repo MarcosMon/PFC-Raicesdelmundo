@@ -13,7 +13,7 @@ import { MuseumDetailsComponent } from './components/museum-details/museum-detai
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: '/museums',
     pathMatch: 'full'
   },
   {

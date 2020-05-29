@@ -6,6 +6,7 @@ import indexRoutes from './routes/indexRoutes';
 import museumsRoutes from './routes/museumsRoutes';
 import authentification from './routes/authentification';
 import signinRoutes from './routes/signinRoutes';
+import commentsRoutes from './routes/commentsRoutes';
 
 
 class Server{
@@ -32,6 +33,7 @@ class Server{
         this.app.use('/api/museums', museumsRoutes);
         this.app.use('/api/register', authentification);
         this.app.use('/api/login', signinRoutes);
+        this.app.use('/api/comments', commentsRoutes);
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {
