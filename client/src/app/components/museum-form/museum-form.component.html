@@ -73,13 +73,13 @@
         </div>
       </div>
       <div class="col-sm-3 pb-3">
-        <label for="exampleCtrl">Price</label>
+        <label for="exampleCtrl">Postal Code</label>
         <div class="form-group">
           <input
             type="number"
-            name="Price"
-            [(ngModel)]="museum.price"
-            placeholder="Price"
+            name="Postal Code"
+            [(ngModel)]="museum.postalcode"
+            placeholder="Postal Code"
             class="form-control"
             autofocus
           />
@@ -112,19 +112,6 @@
         </div>
       </div>
       <div class="col-sm-3 pb-3">
-        <label for="exampleCtrl">Province</label>
-        <div class="form-group">
-          <input
-            type="text"
-            name="Province"
-            [(ngModel)]="museum.province"
-            placeholder="Province"
-            class="form-control"
-            autofocus
-          />
-        </div>
-      </div>
-      <div class="col-sm-6 pb-3">
         <label for="exampleCtrl">City</label>
         <div class="form-group">
           <input
@@ -137,14 +124,27 @@
           />
         </div>
       </div>
-      <div class="col-sm-3 pb-3">
-        <label for="exampleCtrl">Postal Code</label>
+      <div class="col-sm-6 pb-3">
+        <label for="exampleCtrl">ticketPurchasePage</label>
         <div class="form-group">
           <input
             type="text"
-            name="Postal Code"
-            [(ngModel)]="museum.postalcode"
-            placeholder="Postal Code"
+            name="ticketPurchasePage"
+            [(ngModel)]="museum.ticket_purchase_page"
+            placeholder="ticketPurchasePage"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Price</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Price"
+            [(ngModel)]="museum.price"
+            placeholder="Price"
             class="form-control"
             autofocus
           />

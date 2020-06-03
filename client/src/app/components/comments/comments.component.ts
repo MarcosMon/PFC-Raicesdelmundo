@@ -10,12 +10,18 @@ export class CommentsComponent implements OnInit {
   comment;
   userID = localStorage.getItem('id');
   commentList;
+  count: number = 0;
   params = this.activatedRoute.snapshot.params;
   constructor(private activatedRoute: ActivatedRoute,private commentsService : CommentsService) { }
 
   ngOnInit() {
     this.commentsList();
   }
+
+   clickCount(){
+        this.count++
+        console.log(this.count);
+        }
 
   commentsList(){
 

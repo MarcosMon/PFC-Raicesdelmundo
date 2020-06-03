@@ -11,6 +11,7 @@ const museumsRoutes_1 = __importDefault(require("./routes/museumsRoutes"));
 const authentification_1 = __importDefault(require("./routes/authentification"));
 const signinRoutes_1 = __importDefault(require("./routes/signinRoutes"));
 const commentsRoutes_1 = __importDefault(require("./routes/commentsRoutes"));
+const kpiRoutes_1 = __importDefault(require("./routes/kpiRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -30,6 +31,7 @@ class Server {
         this.app.use('/api/register', authentification_1.default);
         this.app.use('/api/login', signinRoutes_1.default);
         this.app.use('/api/comments', commentsRoutes_1.default);
+        this.app.use('/api/kpi', kpiRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -4,7 +4,7 @@
 
   <textarea [rows]="4" [cols]="90" pInputTextarea placeholder="Type something..."  [(ngModel)]="this.comment"></textarea>
   <div class="col">
-  <button type="button" class="btn btn-info" (click)="createComment()">Send</button>
+  <button type="button" class="btn btn-info" (click)="createComment()" (click)="clickCount()">Send</button>
 </div>
   <ul id="comments-list" class="comments-list">
     <li *ngFor="let comment of commentList">

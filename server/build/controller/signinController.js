@@ -50,6 +50,21 @@ class SignInController {
             });
         });
     }
+    listMyMuseumsKPIUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = req.params.id;
+            yield database_1.default.query("SELECT  k.id, m.name, k.webVisitClicks, k.webTicketBuy, k.amountOfComments, m.user_id from kpi as k INNER JOIN museums as m ON k.id_museum = m.id where  m.user_id= " + id, function (err, result) {
+                if (err)
+                    throw err;
+                if (result.length > 0) {
+                    res.json(result);
+                }
+                else {
+                    res.status(404).json({ text: "no tiene museos" });
+                }
+            });
+        });
+    }
 }
 const signInController = new SignInController();
 exports.default = signInController;

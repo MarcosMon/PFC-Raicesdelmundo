@@ -13,6 +13,7 @@ class SignInRoutes {
     config() {
         this.router.post('/', signinController_1.default.list);
         this.router.get('/users/:id', signinController_1.default.listMyMuseums);
+        this.router.get('/users/kpi/:id', signinController_1.default.listMyMuseumsKPIUser);
     }
 }
 const signInRoutes = new SignInRoutes();

@@ -17,7 +17,8 @@ import { MymuseumListComponent } from './components/mymuseum-list/mymuseum-list.
 import { MuseumDetailsComponent } from './components/museum-details/museum-details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommentsComponent } from './components/comments/comments.component';
-
+import { MuseumsKpiComponent } from './components/museums-kpi/museums-kpi.component';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,14 +31,16 @@ import { CommentsComponent } from './components/comments/comments.component';
     MymuseumListComponent,
     MuseumDetailsComponent,
     FooterComponent,
-    CommentsComponent
+    CommentsComponent,
+    MuseumsKpiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ChartsModule
   ],
   providers: [
     MuseumsService

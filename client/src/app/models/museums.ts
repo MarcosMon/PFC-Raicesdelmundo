@@ -9,7 +9,7 @@ export interface Museum{
   website?: string;
   openinghours?: string;
   city? : string;
-  province? : string;
+  ticket_purchase_page? : string;
   country? : string;
   direction? : string;
   postalcode? : string;

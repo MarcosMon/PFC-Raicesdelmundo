@@ -21,7 +21,7 @@ export class MuseumFormComponent implements OnInit {
     website:"",
     openinghours:"",
     city:"",
-    province:"",
+    ticket_purchase_page:"",
     country:"",
     direction:"",
     postalcode:"",

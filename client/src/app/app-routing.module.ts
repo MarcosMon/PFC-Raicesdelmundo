@@ -8,7 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MymuseumListComponent } from './components/mymuseum-list/mymuseum-list.component';
 import { MuseumDetailsComponent } from './components/museum-details/museum-details.component';
-
+import { MuseumsKpiComponent } from './components/museums-kpi/museums-kpi.component';
 
 const routes: Routes = [
   {
@@ -47,6 +47,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'users/kpi/:id',
+    component: MuseumsKpiComponent
   }
 ];
 
