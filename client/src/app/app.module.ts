@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { MuseumsKpiComponent } from './components/museums-kpi/museums-kpi.component';
 import { ChartsModule } from 'ng2-charts';
+import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ChartsModule } from 'ng2-charts';
     MuseumDetailsComponent,
     FooterComponent,
     CommentsComponent,
-    MuseumsKpiComponent
+    MuseumsKpiComponent,
+    HeaderNavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  selector: 'app-header-navigation',
+  templateUrl: './header-navigation.component.html',
+  styleUrls: ['./header-navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class HeaderNavigationComponent implements OnInit {
 
   userLogOut;
   userID = localStorage.getItem('id');
@@ -15,8 +16,8 @@ constructor( private UsersService: UsersService ) {
 }
 
   ngOnInit() {
-
   }
+
   logOut(){
     this.UsersService.logUserOut();
     localStorage.setItem('logeado','false');
@@ -26,7 +27,4 @@ constructor( private UsersService: UsersService ) {
   }
 
 
-  }
-
-
-
+}

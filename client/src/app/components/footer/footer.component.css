@@ -16,7 +16,7 @@
 }
 
 .footer-social-amoeba-path {
-    fill: grey;
+    fill:#D3D3D3;
 }
 
 .footer-social-link.linkedin {
@@ -77,7 +77,7 @@
 }
 
 .footer-copyright {
-    background-color: grey;
+    background-color: #D3D3D3;
     color: #fff;
     padding: 15px 30px;
     text-align: center;
