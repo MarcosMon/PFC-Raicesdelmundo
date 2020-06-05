@@ -16,16 +16,22 @@ const database_1 = __importDefault(require("../database"));
 class MuseumsController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM museums', function (err, result, fields) {
+            yield database_1.default.query("SELECT * FROM museums ", function (err, result) {
                 if (err)
                     throw err;
-                res.json(result);
+                if (result.length > 0) {
+                    res.json(result);
+                }
+                else {
+                    res.status(404).json({ text: "no hay museos" });
+                }
             });
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
+            console.log([res]);
             const museums = yield database_1.default.query('SELECT * FROM museums WHERE id = ?', [id]);
             console.log(museums);
             if (museums.length > 0) {

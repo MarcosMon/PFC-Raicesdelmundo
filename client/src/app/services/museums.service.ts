@@ -11,8 +11,13 @@ export class MuseumsService {
   API_URI = "http://localhost:3000/api";
 
   constructor(private http: HttpClient) {}
-  getMuseums() {
+
+  getAllMuseums() {
     return this.http.get(`${this.API_URI}/museums`);
+  }
+
+  getMuseums(id: string){
+    return this.http.get(`${this.API_URI}/login/users/${id}`);
   }
   getOneMuseum(id: string) {
     return this.http.get(`${this.API_URI}/museums/${id}`);

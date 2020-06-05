@@ -1,24 +1,74 @@
+<div *ngIf="islogged() == 'true'">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-  <a class="navbar-brand" routerLink ="/">Raicesdelmundo</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <div class=" bg-light rounded rounded-pill ">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+            </div>
+            <input type="search" placeholder="Search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+          </div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/users/museums/', userID]" routerLinkActive="active"><span class="fa fa-building"></span> Museums</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="/museums/add" routerLinkActive="active"><span class="fa fa-plus-circle"></span> Add</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" [routerLink]="['/users/kpi/', userID]" routerLinkActive="active"><span class="fa fa-bar-chart"></span> Charts</a>
+        </li>
+      </ul>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink ="/museums" routerLinkActive="active">Museums <span class="sr-only">(current)</span></a>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active"><span class="fas fa-user"></span> Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink ="/museums" routerLinkActive="active" (click) ="logOut()"><span class="fas fa-sign-in-alt"></span> LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</div>
+
+<div *ngIf="islogged() == 'false'">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <div class=" bg-light rounded rounded-pill ">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+            </div>
+            <input type="search" placeholder="Search" aria-describedby="button-addon2" class="form-control border-0 bg-light">
+          </div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
+        </li>
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active"><span class="fas fa-user"></span> Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/museums/add" routerLinkActive="active">Add Museums</a>
+        <a class="nav-link" routerLink ="/login" routerLinkActive="active"><span class="fas fa-sign-in-alt"></span> Login</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
-</div>
 </nav>
+</div>

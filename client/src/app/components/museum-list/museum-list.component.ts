@@ -1,4 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Route, Router, ActivatedRoute } from "@angular/router";
 
 import {MuseumsService} from '../../services/museums.service'
 
@@ -8,35 +9,30 @@ import {MuseumsService} from '../../services/museums.service'
   styleUrls: ['./museum-list.component.css']
 })
 export class MuseumListComponent implements OnInit {
-  @HostBinding('class') classes = 'row';
-  museums: any = [];
+  allmuseums: any = [];
 
-  constructor(private museumsService : MuseumsService) { }
+  constructor(private museumsService : MuseumsService,
+    private router: Router,
+    private activateddRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getMuseums();
+    this.getAllMuseums();
   }
 
-  getMuseums(){
-    this.museumsService.getMuseums().subscribe(
+  getAllMuseums(){
+    this.museumsService.getAllMuseums().subscribe(
       res => {
-        this.museums = res;
-        console.log(this.museums);
+        this.allmuseums = res;
+        console.log(this.allmuseums);
       },
       err => console.log(err)
 
     );
   }
+  showMuseum(nombre:string){
 
-  deleteMuseum(id: string){
-
-    this.museumsService.deleteMuseum(id).subscribe(
-      res => {
-        console.log(res)
-        this.getMuseums();
-      },
-      err => console.log(err)
-    );
+    this.router.navigate(['details/museums/',nombre]);
   }
+
 
 }

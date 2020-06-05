@@ -1,7 +1,14 @@
-<div class="col-md-4 offset-md-4">
-  <div class="card">
-    <div class="card-body">
-      <form>
+<app-navigation></app-navigation>
+<body>
+<div class="container p-4">
+<div class="card card-outline-secondary">
+  <div class="card-header">
+    <h3 class="mb-0 text-center">Your Museum Information</h3>
+  </div>
+  <div class="card-body">
+    <div class="row mt-4">
+      <div class="col-sm-6 pb-3">
+        <label for="exampleAccount">Museum name</label>
         <div class="form-group">
           <input
             type="text"
@@ -12,36 +19,176 @@
             autofocus
           />
         </div>
+      </div>
+
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Phone number</label>
         <div class="form-group">
-          <textarea
-            name="price"
-            [(ngModel)]="museum.price"
-            placeholder="price"
+          <input
+            type="text"
+            name="Number"
+            [(ngModel)]="museum.phone"
+            placeholder="Number"
             class="form-control"
-          ></textarea>
+            autofocus
+          />
         </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">E-mail</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Number"
+            [(ngModel)]="museum.email"
+            placeholder="E-mail"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 pb-3">
+        <label for="exampleCtrl">Website</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Website"
+            [(ngModel)]="museum.website"
+            placeholder="Website"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Opening Hours</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Opening Hours"
+            [(ngModel)]="museum.openinghours"
+            placeholder="Opening Hours"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Postal Code</label>
+        <div class="form-group">
+          <input
+            type="number"
+            name="Postal Code"
+            [(ngModel)]="museum.postalcode"
+            placeholder="Postal Code"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 pb-3">
+        <div class="form-group">
+          <label for="exampleCtrl">Direction</label>
+          <input
+            type="text"
+            name="Direction"
+            [(ngModel)]="museum.direction"
+            placeholder="Direction"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Country</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Country"
+            [(ngModel)]="museum.country"
+            placeholder="Country"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">City</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="City"
+            [(ngModel)]="museum.city"
+            placeholder="City"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 pb-3">
+        <label for="exampleCtrl">ticketPurchasePage</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="ticketPurchasePage"
+            [(ngModel)]="museum.ticket_purchase_page"
+            placeholder="ticketPurchasePage"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Price</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Price"
+            [(ngModel)]="museum.price"
+            placeholder="Price"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+      <div class="col-sm-3 pb-3">
+        <label for="exampleCtrl">Colection Period</label>
+        <div class="form-group">
+          <input
+            type="text"
+            name="Colection Period"
+            [(ngModel)]="museum.colection_period"
+            placeholder="Colection Period"
+            class="form-control"
+            autofocus
+          />
+        </div>
+      </div>
+        <div class="col-md-12 pb-5">
+        <label for="exampleMessage">Description</label>
         <div class="form-group">
           <textarea
             name="description"
+            rows="6"
             [(ngModel)]="museum.description"
             placeholder="Description"
             class="form-control"
           ></textarea>
         </div>
-        <div class="form-group">
-          <input
-            type="url"
-            name="image"
-            [(ngModel)]="museum.image"
-            placeholder="Image"
-            class="form-control"
-          />
-        </div>
-        <button  class="btn btn-success btn-block" (click)=" edit ? updateMuseum() : saveNewMuseum()">
-          Save
-        </button>
-      </form>
+          <small class="text-muted">Add descrption of your museum here.</small>
+          <div class="form-group">
+            <input
+              type="url"
+              name="image"
+              [(ngModel)]="museum.image"
+              placeholder="Image"
+              class="form-control"
+            />
+          </div>
+      </div>
+      <button  class="btn btn-success btn-block" (click)=" edit ? updateMuseum() : saveNewMuseum()">
+        Save
+      </button>
     </div>
   </div>
 </div>
-

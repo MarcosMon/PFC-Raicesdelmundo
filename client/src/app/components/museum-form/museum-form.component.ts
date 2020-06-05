@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Museum } from "../../models/museums";
 import { Route, Router, ActivatedRoute } from "@angular/router";
 import { MuseumsService } from "../../services/museums.service";
@@ -9,13 +9,23 @@ import { MuseumsService } from "../../services/museums.service";
   styleUrls: ["./museum-form.component.css"],
 })
 export class MuseumFormComponent implements OnInit {
-  @HostBinding("class") classes = "row";
-
+  userID = localStorage.getItem('id');
   museum: Museum = {
     id: 0,
     name: "",
+    user_id: this.userID,
     price: 0,
     description: "",
+    phone:"",
+    email:"",
+    website:"",
+    openinghours:"",
+    city:"",
+    ticket_purchase_page:"",
+    country:"",
+    direction:"",
+    postalcode:"",
+    colection_period:"",
     image: "",
     created_at: new Date(),
   };

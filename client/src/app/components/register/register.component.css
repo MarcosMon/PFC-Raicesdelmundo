@@ -1,0 +1,27 @@
+body{
+  background-image: url("https://images2.minutemediacdn.com/image/upload/c_crop,h_575,w_1024,x_0,y_193/f_auto,q_auto,w_1100/v1584382129/shape/mentalfloss/75809-flickr.jpg");
+  background-repeat: no-repeat, repeat;
+  background-position: center; /* Center the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.login-form{
+  background:#1a11117a;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 100px;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.login-heading{
+  text-align: center;
+  margin-top: 20px;
+}
+.container{
+  background: #09090a4f;
+  border-radius: 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.38);
+}
+.btn-primary{
+  width: 100%;
+}
