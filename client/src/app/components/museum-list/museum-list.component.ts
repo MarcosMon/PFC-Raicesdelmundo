@@ -10,7 +10,6 @@ import {MuseumsService} from '../../services/museums.service'
 })
 export class MuseumListComponent implements OnInit {
   allmuseums: any = [];
-
   constructor(private museumsService : MuseumsService,
     private router: Router,
     private activateddRoute: ActivatedRoute) { }

@@ -15,7 +15,6 @@ constructor( private UsersService: UsersService ) {
 }
 
   ngOnInit() {
-
   }
   logOut(){
     this.UsersService.logUserOut();

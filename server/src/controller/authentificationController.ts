@@ -19,7 +19,8 @@ class AuthentificationController{
          user ={
             username: req.body.username,
             password: hash,
-            fullname : req.body.fullname
+            fullname : req.body.fullname,
+            user_role : req.body.user_role
         }
          pool.query("INSERT INTO users SET ? ", user);
             res.json({message: 'Usuario creado'}); 
