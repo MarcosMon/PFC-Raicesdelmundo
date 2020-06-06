@@ -12,7 +12,6 @@ export class HeaderNavigationComponent implements OnInit {
   userID = localStorage.getItem('id');
   log : any = localStorage.getItem('logeado');
 constructor( private UsersService: UsersService ) {
-
 }
 
   ngOnInit() {

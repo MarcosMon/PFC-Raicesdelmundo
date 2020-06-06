@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
     username: "",
     password: "",
     fullname: "",
+    user_role: "admin",
     created_at: new Date()
   };
 
