@@ -39,31 +39,43 @@ export class MuseumDetailsComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+    this.getMuseumKPI();
 
+  }
+
+  getMuseumKPI(){
+    const params = this.activatedRoute.snapshot.params;
+    if (params.id) {
+      console.log(params.id);
       this.kpiService.getMuseumsKPI(params.id).subscribe(
         res => {
           this.kpi = res;
           this.edit = true;
+          console.log(this.edit);
         },
         err => console.log(err)
 
       );
-
+    }
   }
 
   saveNewMuseumKPI() {
     delete this.kpi.created_at;
     delete this.kpi.id;
+    console.log(this.edit);
+
     this.kpiService.saveMuseumKPI(this.kpi).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => console.log(err)
     );
+    this.getMuseumKPI();
   }
   updateMuseumKPI(){
     delete this.kpi[0].name;
     delete this.kpi[0].user_id;
+    console.log(this.edit);
     this.kpi[0].id_museum = this.params.id;
     this.kpi[0].webVisitClicks += this.webVisitClicksCount();
     this.kpi[0].webTicketBuy += this.webTicketBuyCount();
