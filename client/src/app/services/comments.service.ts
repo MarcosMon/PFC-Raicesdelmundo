@@ -6,14 +6,18 @@ import { HttpClient } from "@angular/common/http";
 })
 
 export class CommentsService {
-  API_URL = 'http://localhost:3000/api';
+  API_URI = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
 
   createComment(data){
-    return this.http.post(`${this.API_URL}/comments`, data);
+    return this.http.post(`${this.API_URI}/comments`, data);
 }
 
-getListCommentsByMuseum(id){
-    return this.http.get(`${this.API_URL}/comments/${id}`);
+  getListCommentsByMuseum(id){
+    return this.http.get(`${this.API_URI}/comments/${id}`);
 }
+  deleteMuseumComments(id: string) {
+  return this.http.delete(`${this.API_URI}/comments/${id}`);
+  }
+
 }

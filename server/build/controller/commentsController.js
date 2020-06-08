@@ -30,7 +30,14 @@ class CommentsController {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query("INSERT INTO comments set ?", [req.body]);
             console.log(req.body);
-            res.json({ mensaje: "comentario creado" });
+            res.json({ mensaje: "Comment created" });
+        });
+    }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('DELETE FROM comments WHERE id_museum = ?', [id]);
+            res.json({ message: 'museum comments were deleted' });
         });
     }
 }
