@@ -22,13 +22,13 @@
             <li>PHONE</li>
             <b>{{museum.phone}}</b>
             <div class="wrapper">
-              <a class="fourth before after" href="{{museum.website}}"  (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI(); webVisitClicksCount()">WEBSITE</a>
+              <a class="fourth before after" href="{{museum.website}}" click=" webVisitClicksCount()"  (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI()">WEBSITE</a>
             </div>
             <div class="wrapper">
               <a class="fourth before after" href="mailto:{{museum.email}}">E-MAIL</a>
             </div>
             <div class="wrapper">
-              <a class="fourth before after" href="{{museum.ticket_purchase_page}}"  (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI(); webTicketBuyCount()">Ticket Purchase</a>
+              <a class="fourth before after" href="{{museum.ticket_purchase_page}}" click="webTicketBuyCount()" (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI()">Ticket Purchase</a>
             </div>
           </ol>
         </div>

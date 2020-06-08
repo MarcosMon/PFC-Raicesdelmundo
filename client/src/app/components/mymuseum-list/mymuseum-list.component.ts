@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import {MuseumsService} from '../../services/museums.service'
 import { Route, Router, ActivatedRoute } from "@angular/router";
+import { KpiService } from 'src/app/services/kpi.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Route, Router, ActivatedRoute } from "@angular/router";
 export class MymuseumListComponent implements OnInit {
   museums: any = [];
   constructor(private museumsService : MuseumsService,
+    private kpiService : KpiService,
     private router: Router,
     private activateddRoute: ActivatedRoute) { }
 
@@ -30,6 +32,14 @@ export class MymuseumListComponent implements OnInit {
   }
 
   deleteMuseum(id: string){
+
+    this.kpiService.deleteMuseumKPI(id).subscribe(
+      res => {
+        console.log(res)
+        this.getMuseums();
+      },
+      err => console.log(err)
+    );
 
     this.museumsService.deleteMuseum(id).subscribe(
       res => {

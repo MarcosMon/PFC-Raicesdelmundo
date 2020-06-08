@@ -31,6 +31,12 @@ class KpiController{
             await pool.query('INSERT INTO kpi set ?', [req.body])
             res.json({ message : 'kpi Saved'}) 
         }
+
+        public async delete (req : Request, res : Response): Promise<void>{
+          const { id } = req.params;
+          await pool.query('DELETE FROM kpi WHERE id_museum = ?', [id]);
+          res.json({message: 'The kpi was deleted'});
+      }
    
 
 }

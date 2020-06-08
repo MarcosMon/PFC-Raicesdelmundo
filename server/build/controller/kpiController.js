@@ -45,6 +45,13 @@ class KpiController {
             res.json({ message: 'kpi Saved' });
         });
     }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('DELETE FROM kpi WHERE id_museum = ?', [id]);
+            res.json({ message: 'The kpi was deleted' });
+        });
+    }
 }
 const kpiController = new KpiController();
 exports.default = kpiController;

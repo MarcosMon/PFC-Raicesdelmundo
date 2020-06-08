@@ -26,4 +26,7 @@ export class KpiService {
   updateMuseumKPI(id : string | number, updateMuseumKPI : any): Observable<any> {
     return this.http.put(`${this.API_URI}/kpi/${id}`,updateMuseumKPI);
   }
+  deleteMuseumKPI(id: string) {
+    return this.http.delete(`${this.API_URI}/kpi/${id}`);
+  }
 }
