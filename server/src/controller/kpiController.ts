@@ -28,7 +28,7 @@ class KpiController{
 
         public async create (req : Request, res : Response): Promise<void> {
             console.log(req.body);
-            await pool.query('INSERT INTO kpi set ?', [req.body])
+            pool.query('INSERT INTO kpi set ?', [req.body])
             res.json({ message : 'kpi Saved'}) 
         }
 

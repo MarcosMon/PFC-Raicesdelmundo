@@ -36,8 +36,8 @@ export class RegisterComponent implements OnInit {
         this.mensaje = res;
 
         if(this.mensaje.message.includes('Usuario creado')){
-          this.router.navigate(["/profile"])
-          this.UsersService.logUserIn();
+          this.router.navigate(["/login"])
+          // this.UsersService.logUserIn();
         }
       },
       (err) => console.log(err)

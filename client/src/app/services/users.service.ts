@@ -7,7 +7,8 @@ import { ReplaySubject } from 'rxjs';
   providedIn: "root",
 })
 export class UsersService {
-  API_URI = "http://localhost:3000/api";
+  // API_URI = "http://localhost:3000/api";
+  API_URI = "http://www.raicesdelmundo.tk:3000/api";
 
   constructor(private http: HttpClient) {}
   getUser(user) {
