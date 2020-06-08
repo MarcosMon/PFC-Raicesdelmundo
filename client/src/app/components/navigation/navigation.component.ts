@@ -10,18 +10,19 @@ export class NavigationComponent implements OnInit {
   userLogOut;
   userID = localStorage.getItem('id');
   log : any = localStorage.getItem('logeado');
+  ok = false;
 constructor( private UsersService: UsersService ) {
 
 }
 
   ngOnInit() {
+
   }
   logOut(){
-    this.UsersService.logUserOut();
-    localStorage.setItem('logeado','false');
+    this.UsersService.logUserIn('false');
   }
-  islogged(){
-    return  localStorage.getItem('logeado');
+  isLogged(){
+    return <any> this.UsersService.isLogged();
   }
 
 

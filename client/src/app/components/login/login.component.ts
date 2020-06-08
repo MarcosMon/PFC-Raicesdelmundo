@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         this.mensaje = res;
         if(this.mensaje.message.includes('respuesta')){
           this.router.navigateByUrl('/profile', { state: { hello: this.mensaje.message } });
+          this.UsersService.logUserIn(true);
           localStorage.setItem('logeado', 'true');
           console.log(this.mensaje.message.substring(10,11));
           localStorage.setItem('id', this.mensaje.message.substring(10,11));

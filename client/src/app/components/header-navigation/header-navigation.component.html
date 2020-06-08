@@ -1,4 +1,4 @@
-<div *ngIf="islogged() == 'true'">
+<div *ngIf="this.isLogged() == 'true'">
 
   <header class="header">
 
@@ -42,7 +42,7 @@
   </nav>
 </header>
 </div>
-<div *ngIf="islogged() == 'false'">
+<div *ngIf="this.isLogged() == 'false' || this.isLogged() == null">
 
   <header class="header">
 

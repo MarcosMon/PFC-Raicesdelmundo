@@ -7,8 +7,8 @@ import { ReplaySubject } from 'rxjs';
   providedIn: "root",
 })
 export class UsersService {
-  // API_URI = "http://localhost:3000/api";
-  API_URI = "http://www.raicesdelmundo.tk:3000/api";
+  API_URI = "http://localhost:3000/api";
+  // API_URI = "http://www.raicesdelmundo.tk:3000/api";
 
   constructor(private http: HttpClient) {}
   getUser(user) {
@@ -20,13 +20,12 @@ export class UsersService {
   }
 
 
-  public logUserIn() {
-    localStorage.setItem('logeado', 'true');
+  public logUserIn(data : any) {
+    localStorage.setItem('logeado', data);
 
   }
-
-  public logUserOut() {
-    localStorage.setItem('logeado', 'false');
+  public isLogged()  {
+    return <any> localStorage.getItem('logeado');
   }
 
 }

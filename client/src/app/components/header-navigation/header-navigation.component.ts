@@ -18,11 +18,10 @@ constructor( private UsersService: UsersService ) {
   }
 
   logOut(){
-    this.UsersService.logUserOut();
-    localStorage.setItem('logeado','false');
+    this.UsersService.logUserIn('false');
   }
-  islogged(){
-    return  localStorage.getItem('logeado');
+  isLogged(){
+    return <any> this.UsersService.isLogged();
   }
 
 
