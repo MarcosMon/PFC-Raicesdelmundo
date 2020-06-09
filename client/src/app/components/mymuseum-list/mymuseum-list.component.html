@@ -2,8 +2,14 @@
 <body style="background-color: white;">
   <div class="album py-5 ">
     <div class="container">
-
+      <div *ngIf="this.error != 'false'">
+        <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+          <strong>{{error}}!</strong> <p>Presione 'Add' para añadir un museo</p><a class="nav-link" routerLink="/museums/add" routerLinkActive="active"><span class="fa fa-plus-circle"></span> Add</a>
+        </div>
+      </div>
       <div class="row">
+
+
         <div class="col-md-3" *ngFor="let museum of museums">
           <div class="card mb-4 box-shadow">
             <div class="card-header  bg-light text-black d-flex justify-content-center align-items-center">

@@ -12,6 +12,7 @@ import { CommentsService } from 'src/app/services/comments.service';
 })
 export class MymuseumListComponent implements OnInit {
   museums: any = [];
+  error = 'false';
   constructor(private museumsService : MuseumsService,
     private kpiService : KpiService,
     private commentsService : CommentsService,
@@ -20,6 +21,9 @@ export class MymuseumListComponent implements OnInit {
 
   ngOnInit() {
     this.getMuseums();
+    if(this.error == 'no tiene museos'){
+      window.location.reload();
+    }
   }
 
   getMuseums(){
@@ -27,8 +31,12 @@ export class MymuseumListComponent implements OnInit {
       res => {
         this.museums = res;
         console.log(this.museums);
+
       },
-      err => console.log(err)
+      err =>{
+        this.error = err.error.text;
+      }
+
 
     );
   }

@@ -22,7 +22,6 @@ export class MuseumListComponent implements OnInit {
     this.museumsService.getAllMuseums().subscribe(
       res => {
         this.allmuseums = res;
-        console.log(this.allmuseums);
       },
       err => console.log(err)
 

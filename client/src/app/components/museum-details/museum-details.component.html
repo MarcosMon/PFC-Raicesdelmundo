@@ -1,6 +1,6 @@
 <app-navigation></app-navigation>
 <div class="imagen">
-  <img src={{museum.image}} alt="" style="border-radius: 20px;">
+  <img [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt="" style="border-radius: 20px;">
 </div>
 
   <main role="main" class="container">
@@ -28,7 +28,7 @@
               <a class="fourth before after" href="mailto:{{museum.email}}">E-MAIL</a>
             </div>
             <div class="wrapper">
-              <a class="fourth before after" href="{{museum.ticket_purchase_page}}" click="webTicketBuyCount()" (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI()">Ticket Purchase</a>
+              <!-- <a class="fourth before after" href="{{museum.ticket_purchase_page}}" click="webTicketBuyCount()" (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI()">Ticket Purchase</a> -->
             </div>
           </ol>
         </div>
