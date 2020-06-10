@@ -21,9 +21,7 @@ export class MymuseumListComponent implements OnInit {
 
   ngOnInit() {
     this.getMuseums();
-    if(this.error == 'no tiene museos'){
-      window.location.reload();
-    }
+
   }
 
   getMuseums(){
@@ -67,8 +65,12 @@ deleteMyMuseumComments(id:string){
 
     this.museumsService.deleteMuseum(id).subscribe(
       res => {
-        console.log(res)
+
         this.getMuseums();
+        console.log(res);
+        if(this.museums.length <= 1){
+          this.museums = [];
+        }
       },
       err => console.log(err)
     );
