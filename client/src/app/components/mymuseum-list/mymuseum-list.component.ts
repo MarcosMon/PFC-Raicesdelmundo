@@ -68,6 +68,7 @@ deleteMyMuseumComments(id:string){
 
         this.getMuseums();
         console.log(res);
+
         if(this.museums.length <= 1){
           this.museums = [];
         }
