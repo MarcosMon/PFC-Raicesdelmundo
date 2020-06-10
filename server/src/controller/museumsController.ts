@@ -20,9 +20,7 @@ class MuseumsController{
         
         public async getOne (req : Request, res : Response): Promise<any> {
             const { id } = req.params;
-            console.log([res]);
             const museums = await pool.query('SELECT * FROM museums WHERE id = ?', [id]);
-            console.log(museums);
             if  (museums.length > 0){
                 return res.json(museums[0]);
             }

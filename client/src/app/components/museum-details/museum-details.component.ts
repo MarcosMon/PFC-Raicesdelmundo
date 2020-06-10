@@ -12,14 +12,12 @@ import {Location} from '@angular/common';
 export class MuseumDetailsComponent implements OnInit {
   museum:any = {};
   params = this.activatedRoute.snapshot.params;
-  webVisitClicks = 0;
-  webTicketBuy = 0;
+
   kpi: any = {
     id: 0,
     id_museum: this.params.id,
     webVisitClicks: 0,
     webTicketBuy: 0,
-    amountOfComments: 0,
     created_at: new Date(),
   };
 
@@ -72,13 +70,17 @@ export class MuseumDetailsComponent implements OnInit {
     );
     this.getMuseumKPI();
   }
-  updateMuseumKPI(){
+  updateMuseumKPI(webVisit : boolean){
     delete this.kpi[0].name;
     delete this.kpi[0].user_id;
-    console.log(this.edit);
     this.kpi[0].id_museum = this.params.id;
-    this.kpi[0].webVisitClicks += this.webVisitClicksCount();
-    this.kpi[0].webTicketBuy += this.webTicketBuyCount();
+    if(webVisit){
+      this.kpi[0].webVisitClicks ++;
+    }
+    else{
+      this.kpi[0].webTicketBuy ++;
+    }
+
     this.kpiService.updateMuseumKPI(this.kpi[0].id_museum, this.kpi[0])
     .subscribe(
       res =>{
@@ -87,19 +89,6 @@ export class MuseumDetailsComponent implements OnInit {
       err => console.log(err)
     )
   }
-
-  webVisitClicksCount(){
-    this.webVisitClicks = 0;
-    this.webVisitClicks ++;
-    return this.webVisitClicks;
-  }
-
-  webTicketBuyCount(){
-    this.webTicketBuy = 0;
-    this.webTicketBuy ++;
-    return this.webTicketBuy;
-  }
-
 
 
 }
