@@ -12,7 +12,7 @@ class MuseumsController{
             if (result.length > 0) {
               res.json(result);
             } else {
-              res.status(404).json({ text: "no hay museos" });
+              res.status(404).json({ text: "No hay museos" });
             }
           });
         }

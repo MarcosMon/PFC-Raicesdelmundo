@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from "../../services/users.service";
 import { Route, Router, ActivatedRoute } from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -19,17 +20,62 @@ export class RegisterComponent implements OnInit {
     created_at: new Date()
   };
 
+  registerForm: FormGroup;
+    submitted = false;
+
   constructor(private UsersService: UsersService,
     private router: Router,
-    private activateddRoute: ActivatedRoute) { }
+    private activateddRoute: ActivatedRoute,
+    private formBuilder: FormBuilder) { }
 
-  ngOnInit() {
+    ngOnInit() {
+      this.registerForm = this.formBuilder.group({
+          fullName: ['', Validators.required],
+          userName: ['', Validators.required],
+          password: ['', [Validators.required, Validators.minLength(6)]],
+          confirmPassword: ['', Validators.required]
+      }, {
+          validator: this.MustMatch('password', 'confirmPassword')
+      });
+  }
+  get f() { return this.registerForm.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.registerForm.invalid) {
+            return;
+        }
+
+        this.user.fullname = this.registerForm.value.fullName;
+        this.user.username = this.registerForm.value.userName;
+        this.user.password = this.registerForm.value.password;
+        this.saveNewUser();
+
+    }
+
+     MustMatch(controlName: string, matchingControlName: string) {
+      return (formGroup: FormGroup) => {
+          const control = formGroup.controls[controlName];
+          const matchingControl = formGroup.controls[matchingControlName];
+
+          if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+              // return if another validator has already found an error on the matchingControl
+              return;
+          }
+
+          // set error on matchingControl if validation fails
+          if (control.value !== matchingControl.value) {
+              matchingControl.setErrors({ mustMatch: true });
+          } else {
+              matchingControl.setErrors(null);
+          }
+      }
   }
 
   saveNewUser() {
 
-
-    console.log(this.user);
     this.UsersService.createUser(this.user).subscribe(
       (res) => {
         console.log(res);
