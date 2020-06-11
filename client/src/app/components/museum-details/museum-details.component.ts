@@ -61,14 +61,14 @@ export class MuseumDetailsComponent implements OnInit {
     delete this.kpi.created_at;
     delete this.kpi.id;
     console.log(this.edit);
-
+    this.getMuseumKPI();
     this.kpiService.saveMuseumKPI(this.kpi).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => console.log(err)
     );
-    this.getMuseumKPI();
+
   }
   updateMuseumKPI(webVisit : boolean){
     delete this.kpi[0].name;

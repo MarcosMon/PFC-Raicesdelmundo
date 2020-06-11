@@ -45,7 +45,7 @@ class SignInController {
                     res.json(result);
                 }
                 else {
-                    res.status(404).json({ text: "no tiene museos" });
+                    res.status(404).json({ text: "No dispone de ningún Museo." });
                 }
             });
         });
@@ -60,7 +60,7 @@ class SignInController {
                     res.json(result);
                 }
                 else {
-                    res.status(404).json({ text: "No tiene museos" });
+                    res.status(404).json({ text: "No dispone de ningún Museo." });
                 }
             });
         });
