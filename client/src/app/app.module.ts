@@ -21,6 +21,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { MuseumsKpiComponent } from './components/museums-kpi/museums-kpi.component';
 import { ChartsModule } from 'ng2-charts';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { HeaderNavigationComponent } from './components/header-navigation/header
     FooterComponent,
     CommentsComponent,
     MuseumsKpiComponent,
-    HeaderNavigationComponent
+    HeaderNavigationComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { HeaderNavigationComponent } from './components/header-navigation/header
     ReactiveFormsModule,
   ],
   providers: [
-    MuseumsService
+    MuseumsService,
+    NavigationComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -8,6 +8,7 @@ import authentification from './routes/authentification';
 import signinRoutes from './routes/signinRoutes';
 import commentsRoutes from './routes/commentsRoutes';
 import kpiRoutes from './routes/kpiRoutes';
+import ticketRoutes from './routes/ticketRoutes';
 
 
 
@@ -37,6 +38,7 @@ class Server{
         this.app.use('/api/login', signinRoutes);
         this.app.use('/api/comments', commentsRoutes);
         this.app.use('/api/kpi', kpiRoutes);
+        this.app.use('/api/tickets', ticketRoutes);
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {

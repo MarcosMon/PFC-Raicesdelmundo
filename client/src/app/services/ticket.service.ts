@@ -18,6 +18,9 @@ export class TicketService {
   getListTicketsByUser(id){
       return this.http.get(`${this.API_URI}/tickets/${id}`);
   }
+  getListTickets(){
+    return this.http.get(`${this.API_URI}/tickets`);
+}
   deleteTicket(id: string) {
   return this.http.delete(`${this.API_URI}/tickets/${id}`);
   }
