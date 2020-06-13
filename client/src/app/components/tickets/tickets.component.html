@@ -368,7 +368,8 @@
                               <button type="button" (click)="
                                   updateTicketStatus(
                                     this.selectedRow.id,
-                                    'Closed',this.selectedRow.id_user
+                                    'Closed',this.selectedRow.id_user, this.selectedRow.comment,
+                                    this.selectedRow.subject, this.selectedRow.type
                                   )
                                 " class="btn btn-default" data-dismiss="modal">
                                 <i class="fa fa-times"></i> Cerrar Ticket

@@ -102,13 +102,13 @@ export class TicketsComponent implements OnInit {
 
   }
 
-  updateTicketStatus(id:any, status : any, id_user : any){
+  updateTicketStatus(id:any, status : any, id_user : any, comment : any, subject : any , type : any){
     let commentData: any = {
       id_user: id_user,
-      subject: this.subject,
+      subject: subject,
       status: status,
-      type: this.type,
-      comment: this.comment,
+      type: type,
+      comment: comment,
     };
     this.ticketService.updateTicketStatus(id, commentData)
     .subscribe(
