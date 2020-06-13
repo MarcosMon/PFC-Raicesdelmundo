@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MuseumFormComponent } from './components/museum-form/museum-form.component';
 import { MuseumListComponent } from './components/museum-list/museum-list.component';
+
 
 import {MuseumsService} from './services/museums.service';
 import { RegisterComponent } from './components/register/register.component';
@@ -20,6 +21,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { MuseumsKpiComponent } from './components/museums-kpi/museums-kpi.component';
 import { ChartsModule } from 'ng2-charts';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { HeaderNavigationComponent } from './components/header-navigation/header
     FooterComponent,
     CommentsComponent,
     MuseumsKpiComponent,
-    HeaderNavigationComponent
+    HeaderNavigationComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +45,12 @@ import { HeaderNavigationComponent } from './components/header-navigation/header
     HttpClientModule,
     FormsModule,
     RouterModule,
-    ChartsModule
+    ChartsModule,
+    ReactiveFormsModule,
   ],
   providers: [
-    MuseumsService
+    MuseumsService,
+    NavigationComponent
   ],
   bootstrap: [AppComponent]
 })

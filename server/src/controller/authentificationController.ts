@@ -14,7 +14,6 @@ class AuthentificationController{
 
     public async create (req : Request, res : Response): Promise<any> {
        let user;
-       console.log(req.body);
        Auth.encryptPassword(req.body.password).then((hash) => {
          user ={
             username: req.body.username,

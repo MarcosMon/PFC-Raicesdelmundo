@@ -1,8 +1,7 @@
 <app-navigation></app-navigation>
 <div class="imagen">
-  <img src={{museum.image}} alt="" style="border-radius: 20px;">
+  <img [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt="" style="border-radius: 20px;">
 </div>
-
   <main role="main" class="container">
     <div class="row">
       <div class="col-md-8 blog-main">
@@ -22,22 +21,27 @@
             <li>PHONE</li>
             <b>{{museum.phone}}</b>
             <div class="wrapper">
-              <a class="fourth before after" href="{{museum.website}}"  (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI(); webVisitClicksCount()">WEBSITE</a>
+              <a class="fourth before after" href="{{museum.website}}"   (click)="  edit ? updateMuseumKPI(true) : saveNewMuseumKPI()">WEBSITE</a>
             </div>
             <div class="wrapper">
               <a class="fourth before after" href="mailto:{{museum.email}}">E-MAIL</a>
             </div>
             <div class="wrapper">
-              <a class="fourth before after" href="{{museum.ticket_purchase_page}}"  (click)="  edit ? updateMuseumKPI() : saveNewMuseumKPI(); webTicketBuyCount()">Ticket Purchase</a>
+              <a class="fourth before after" href="{{museum.ticket_purchase_page}}"  (click)="  edit ? updateMuseumKPI(false) : saveNewMuseumKPI()">Ticket Purchase</a>
             </div>
           </ol>
         </div>
 
-        <div class="p-3">
-          <h4 class="font-italic">Opening hours</h4>
-            <b>{{museum.openinghours}}</b>
-          </div>
+<div class="p-3">
+  <h4 class="font-italic">Ubication</h4>
+  <iframe [src]="googleUbication" width="325" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
+</div>
+
+<div class="p-3">
+  <h4 class="font-italic">Opening hours</h4>
+    <b>{{museum.openinghours}}</b>
+  </div>
         <div class="p-3">
           <h4 class="font-italic">Price</h4>
           <ol class="list-unstyled mb-0">
@@ -52,6 +56,11 @@
             <b *ngIf="museum.price > 0;" >{{museum.price -2 +  "€"}}</b>
           </ol>
         </div>
+
+        <div class="p-3">
+          <h4 class="font-italic">Colection Period</h4>
+            <b>{{museum.colection_period}}</b>
+          </div>
       </aside>
 
     </div>

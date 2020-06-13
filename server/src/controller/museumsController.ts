@@ -12,7 +12,7 @@ class MuseumsController{
             if (result.length > 0) {
               res.json(result);
             } else {
-              res.status(404).json({ text: "no hay museos" });
+              res.status(404).json({ text: "No hay museos" });
             }
           });
         }
@@ -20,9 +20,7 @@ class MuseumsController{
         
         public async getOne (req : Request, res : Response): Promise<any> {
             const { id } = req.params;
-            console.log([res]);
             const museums = await pool.query('SELECT * FROM museums WHERE id = ?', [id]);
-            console.log(museums);
             if  (museums.length > 0){
                 return res.json(museums[0]);
             }

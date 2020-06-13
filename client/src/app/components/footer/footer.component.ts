@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   constructor() {
-    localStorage.setItem('logeado', 'false');
+    // localStorage.setItem('logeado', 'false');
    }
 
   ngOnInit() {

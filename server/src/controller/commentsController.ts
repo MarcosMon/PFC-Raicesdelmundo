@@ -17,7 +17,12 @@ class CommentsController{
         await pool.query("INSERT INTO comments set ?", [req.body]);
         console.log(req.body);
 
-        res.json({ mensaje: "comentario creado" });
+        res.json({ mensaje: "Comment created" });
+    }
+    public async delete (req : Request, res : Response): Promise<void>{
+        const { id } = req.params;
+        await pool.query('DELETE FROM comments WHERE id_museum = ?', [id]);
+        res.json({message: 'museum comments were deleted'});
     }
 
 }

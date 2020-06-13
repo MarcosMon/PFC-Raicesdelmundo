@@ -23,7 +23,7 @@ class MuseumsController {
                     res.json(result);
                 }
                 else {
-                    res.status(404).json({ text: "no hay museos" });
+                    res.status(404).json({ text: "No hay museos" });
                 }
             });
         });
@@ -31,9 +31,7 @@ class MuseumsController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            console.log([res]);
             const museums = yield database_1.default.query('SELECT * FROM museums WHERE id = ?', [id]);
-            console.log(museums);
             if (museums.length > 0) {
                 return res.json(museums[0]);
             }

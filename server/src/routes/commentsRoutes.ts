@@ -11,7 +11,8 @@ class CommentsRoutes{
     }
     config(): void{
         this.router.get('/:id', commentsController.getListCommentsByMuseum),
-        this.router.post('/', commentsController.create)
+        this.router.post('/', commentsController.create),
+        this.router.delete('/:id', commentsController.delete);
 
     }
 

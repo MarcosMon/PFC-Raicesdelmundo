@@ -15,5 +15,6 @@ export interface Museum{
   postalcode? : string;
   colection_period? : string;
   image? : string;
+  ubication? : string;
   created_at? : Date;
 }

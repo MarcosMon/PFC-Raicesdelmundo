@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import {MuseumsService} from '../../services/museums.service'
 import {KpiService} from '../../services/kpi.service'
 import {Location} from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-museum-details',
@@ -12,21 +14,21 @@ import {Location} from '@angular/common';
 export class MuseumDetailsComponent implements OnInit {
   museum:any = {};
   params = this.activatedRoute.snapshot.params;
-  webVisitClicks = 0;
-  webTicketBuy = 0;
+
   kpi: any = {
     id: 0,
     id_museum: this.params.id,
     webVisitClicks: 0,
     webTicketBuy: 0,
-    amountOfComments: 0,
     created_at: new Date(),
   };
 
   edit: boolean = false;
-  constructor( private activatedRoute: ActivatedRoute,
-    private MuseumsService:MuseumsService,private kpiService : KpiService, private location:Location) {
+  googleUbication: SafeResourceUrl;
 
+  constructor( private activatedRoute: ActivatedRoute,
+    private MuseumsService:MuseumsService,private kpiService : KpiService, private location:Location,
+    private sanitizer: DomSanitizer) {
 }
 
 
@@ -35,38 +37,56 @@ export class MuseumDetailsComponent implements OnInit {
     this.MuseumsService.getOneMuseum(params.id).subscribe(
       (res) => {
         this.museum = res;
-        console.log(res)
+        this.googleUbication =  this.sanitizer.bypassSecurityTrustResourceUrl(this.museum.ubication);
       },
       (err) => console.log(err)
     );
+    this.getMuseumKPI();
 
+  }
+sanitizerSecurity(){
+
+}
+  getMuseumKPI(){
+    const params = this.activatedRoute.snapshot.params;
+    if (params.id) {
+      console.log(params.id);
       this.kpiService.getMuseumsKPI(params.id).subscribe(
         res => {
           this.kpi = res;
           this.edit = true;
+          console.log(this.edit);
         },
         err => console.log(err)
 
       );
-
+    }
   }
 
   saveNewMuseumKPI() {
     delete this.kpi.created_at;
     delete this.kpi.id;
+    console.log(this.edit);
+    this.getMuseumKPI();
     this.kpiService.saveMuseumKPI(this.kpi).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => console.log(err)
     );
+
   }
-  updateMuseumKPI(){
+  updateMuseumKPI(webVisit : boolean){
     delete this.kpi[0].name;
     delete this.kpi[0].user_id;
     this.kpi[0].id_museum = this.params.id;
-    this.kpi[0].webVisitClicks += this.webVisitClicksCount();
-    this.kpi[0].webTicketBuy += this.webTicketBuyCount();
+    if(webVisit){
+      this.kpi[0].webVisitClicks ++;
+    }
+    else{
+      this.kpi[0].webTicketBuy ++;
+    }
+
     this.kpiService.updateMuseumKPI(this.kpi[0].id_museum, this.kpi[0])
     .subscribe(
       res =>{
@@ -75,19 +95,6 @@ export class MuseumDetailsComponent implements OnInit {
       err => console.log(err)
     )
   }
-
-  webVisitClicksCount(){
-    this.webVisitClicks = 0;
-    this.webVisitClicks ++;
-    return this.webVisitClicks;
-  }
-
-  webTicketBuyCount(){
-    this.webTicketBuy = 0;
-    this.webTicketBuy ++;
-    return this.webTicketBuy;
-  }
-
 
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,24 +9,21 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class NavigationComponent implements OnInit {
 
-  userLogOut;
   userID = localStorage.getItem('id');
-  log : any = localStorage.getItem('logeado');
-constructor( private UsersService: UsersService ) {
+constructor( private UsersService: UsersService,
+            private router : Router ) {
 
 }
 
   ngOnInit() {
+
   }
   logOut(){
-    this.UsersService.logUserOut();
-    localStorage.setItem('logeado','false');
+    this.UsersService.logUserIn('false');
   }
-  islogged(){
-    return  localStorage.getItem('logeado');
+  isLogged(){
+    return <any> this.UsersService.isLogged();
   }
-
-
   }
 
 

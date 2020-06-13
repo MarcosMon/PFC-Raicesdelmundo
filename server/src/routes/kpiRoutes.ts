@@ -15,6 +15,7 @@ class KpiRoutes{
         this.router.get('/:id', kpiController.listMyMuseumsKPI );
         this.router.post('/', kpiController.create);
         this.router.put('/:id', kpiController.update);
+        this.router.delete('/:id', kpiController.delete);
     }
 
 }

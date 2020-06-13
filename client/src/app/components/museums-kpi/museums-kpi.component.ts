@@ -21,24 +21,32 @@ export class MuseumsKpiComponent implements OnInit {
     public barChartOptions: ChartOptions = {
       responsive: true,
       // We use these empty structures as placeholders for dynamic theming.
-      scales: { xAxes: [{}], yAxes: [{}] },
+      scales: { xAxes: [{ticks: {
+        beginAtZero: true,
+        callback: function (label : any, index, labels) {
+          if (Math.floor(label) === label) {
+            return label;
+        }
+        }
+    }}], yAxes: [{
+
+     }] },
       plugins: {
         datalabels: {
           anchor: 'end',
           align: 'end',
-        }
+        },
       }
     };
 
     public barChartLabels: Label[] = [];
-    public barChartType: ChartType = 'bar';
+    public barChartType: ChartType = 'horizontalBar';
     public barChartLegend = true;
     // public barChartPlugins = [pluginDataLabels];
 
     public barChartData: ChartDataSets[] = [
       { data: [], label: 'webVisitClicks' },
-      { data: [], label: 'webTicketBuy' },
-      { data: [], label: 'amountOfComments' }
+      { data: [], label: 'webTicketBuy' }
     ];
   ngOnInit() {
     this.getMuseumsKPI();
@@ -63,7 +71,6 @@ export class MuseumsKpiComponent implements OnInit {
           this.barChartLabels.push(element.name);
           this.barChartData[0].data.push(element.webVisitClicks);
           this.barChartData[1].data.push(element.webTicketBuy);
-          this.barChartData[2].data.push(element.amountOfComments);
         });
       },
       err => console.log(err)

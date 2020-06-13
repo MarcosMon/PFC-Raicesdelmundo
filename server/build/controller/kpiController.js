@@ -17,7 +17,7 @@ class KpiController {
     listMyMuseumsKPI(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const id = req.params.id;
-            yield database_1.default.query("SELECT  k.id, m.name, k.webVisitClicks, k.webTicketBuy, k.amountOfComments, m.user_id from kpi as k INNER JOIN museums as m ON k.id_museum = m.id where  k.id_museum= " + id, function (err, result) {
+            yield database_1.default.query("SELECT  k.id, m.name, k.webVisitClicks, k.webTicketBuy, m.user_id from kpi as k INNER JOIN museums as m ON k.id_museum = m.id where  k.id_museum= " + id, function (err, result) {
                 if (err)
                     throw err;
                 if (result.length > 0) {
@@ -32,17 +32,21 @@ class KpiController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            console.log(id);
-            console.log(req.body);
             yield database_1.default.query('UPDATE kpi set ? WHERE id_museum = ?', [req.body, id]);
             res.json({ message: 'The kpi was updated' });
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(req.body);
-            yield database_1.default.query('INSERT INTO kpi set ?', [req.body]);
+            database_1.default.query('INSERT INTO kpi set ?', [req.body]);
             res.json({ message: 'kpi Saved' });
+        });
+    }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('DELETE FROM kpi WHERE id_museum = ?', [id]);
+            res.json({ message: 'The kpi was deleted' });
         });
     }
 }

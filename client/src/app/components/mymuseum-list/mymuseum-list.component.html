@@ -1,15 +1,21 @@
 <app-navigation></app-navigation>
-<body style="background-color: white;">
+<body>
   <div class="album py-5 ">
     <div class="container">
-
+      <div *ngIf="this.error != 'false'">
+        <div class="alert alert-warning alert-dismissible fade show text-center center " style="height: 30rem;" role="alert">
+          <p class="formato">{{error}}<p> Presione 'Add' si quiere añadir un Museo.</p><a class="nav-link" routerLink="/museums/add" routerLinkActive="active"><span class="fa fa-plus-circle"></span> Add</a>
+        </div>
+      </div>
       <div class="row">
+
+
         <div class="col-md-3" *ngFor="let museum of museums">
           <div class="card mb-4 box-shadow">
             <div class="card-header  bg-light text-black d-flex justify-content-center align-items-center">
               {{museum.name}}
          </div>
-            <img class="card-img-top" src="{{museum.image}}" alt="Card image cap">
+            <img class="card-img-top" [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt="Card image cap">
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <div class="btn-group">

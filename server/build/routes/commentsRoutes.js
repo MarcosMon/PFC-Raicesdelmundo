@@ -12,7 +12,8 @@ class CommentsRoutes {
     }
     config() {
         this.router.get('/:id', commentsController_1.default.getListCommentsByMuseum),
-            this.router.post('/', commentsController_1.default.create);
+            this.router.post('/', commentsController_1.default.create),
+            this.router.delete('/:id', commentsController_1.default.delete);
     }
 }
 const commentsRoutes = new CommentsRoutes();

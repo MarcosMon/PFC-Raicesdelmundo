@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class KpiService {
   API_URI = "http://localhost:3000/api";
+  // API_URI = "http://www.raicesdelmundo.tk:3000/api";
 
   constructor(private http: HttpClient) {}
 
@@ -25,5 +26,8 @@ export class KpiService {
 
   updateMuseumKPI(id : string | number, updateMuseumKPI : any): Observable<any> {
     return this.http.put(`${this.API_URI}/kpi/${id}`,updateMuseumKPI);
+  }
+  deleteMuseumKPI(id: string) {
+    return this.http.delete(`${this.API_URI}/kpi/${id}`);
   }
 }
