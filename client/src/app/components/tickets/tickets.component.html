@@ -119,8 +119,8 @@
               <div class="col-md-12">
                 <ul class="list-group fa-padding">
                   <li class="list-group-item" *ngFor="let comment of commentList; let i = index; let lastcall = last"
-                     data-toggle="modal" data-target="#issue">
-                     <span *ngIf="lastcall">{{setSelectedRow(comment, i)}}</span>
+                  (click) = "setSelectedRow(comment, i)" data-toggle="modal" data-target="#issue">
+                     <!-- <span *ngIf="lastcall ">{{this.setSelectedRow(comment, i)}}</span> -->
                     <div class="media">
                       <i class="fa fa-cog pull-left"></i>
                       <div class="media-body">
@@ -312,8 +312,8 @@
                 <div class="col-md-12">
                   <ul class="list-group fa-padding">
                     <li class="list-group-item" *ngFor="let comment of allTicketList; let i = index; let lastcall=last"
-                       data-toggle="modal" data-target="#issue">
-                      <span *ngIf="lastcall">{{setSelectedRow(comment, i)}}</span>
+                       (click) = "setSelectedRow(comment, i)" data-toggle="modal" data-target="#issue">
+                      <!-- <span *ngIf="lastcall">{{setSelectedRow(comment, i)}}</span> -->
                       <div class="media">
                         <i class="fa fa-cog pull-left"></i>
                         <div class="media-body">
