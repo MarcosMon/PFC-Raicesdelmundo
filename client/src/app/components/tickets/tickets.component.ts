@@ -11,6 +11,8 @@ export class TicketsComponent implements OnInit {
   comment;
   type;
   subject;
+  tickets:any = {};
+
   selectedRow;
   countStatus;
   countType;
@@ -42,7 +44,6 @@ export class TicketsComponent implements OnInit {
     this.countType = [...commentList].reduce((a, { type }) => {
 
       a[type] = (a[type] || 0) + 1;
-      console.log(a);
       return a;
     }, {});
   }
@@ -70,6 +71,7 @@ export class TicketsComponent implements OnInit {
       (res) => {
         console.log(res);
         this.allTicketList = res;
+        this.tickets = res;
         if(this.userID == '2'){
         this.countTicketStatus(this.allTicketList);
         this.countTicketType(this.allTicketList);
@@ -91,11 +93,13 @@ export class TicketsComponent implements OnInit {
     this.ticketService.createTicket(commentData).subscribe(
       (res) => {
         console.log(res);
+        this.ticketsList();
+        this.allTicketsList()
       },
       (err) => console.log(err)
     );
     this.comment = null;
-    this.ticketsList();
+
   }
 
   updateTicketStatus(id:any, status : any, id_user : any){
@@ -110,10 +114,10 @@ export class TicketsComponent implements OnInit {
     .subscribe(
       res =>{
         console.log(res);
+        this.allTicketsList();
       },
       err => console.log(err)
     )
-    this.allTicketsList();
 
   }
 
