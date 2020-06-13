@@ -2,7 +2,6 @@
 <div class="imagen">
   <img [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt="" style="border-radius: 20px;">
 </div>
-
   <main role="main" class="container">
     <div class="row">
       <div class="col-md-8 blog-main">
@@ -33,11 +32,16 @@
           </ol>
         </div>
 
-        <div class="p-3">
-          <h4 class="font-italic">Opening hours</h4>
-            <b>{{museum.openinghours}}</b>
-          </div>
+<div class="p-3">
+  <h4 class="font-italic">Ubication</h4>
+  <iframe [src]="googleUbication" width="325" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
+</div>
+
+<div class="p-3">
+  <h4 class="font-italic">Opening hours</h4>
+    <b>{{museum.openinghours}}</b>
+  </div>
         <div class="p-3">
           <h4 class="font-italic">Price</h4>
           <ol class="list-unstyled mb-0">
@@ -52,6 +56,11 @@
             <b *ngIf="museum.price > 0;" >{{museum.price -2 +  "€"}}</b>
           </ol>
         </div>
+
+        <div class="p-3">
+          <h4 class="font-italic">Colection Period</h4>
+            <b>{{museum.colection_period}}</b>
+          </div>
       </aside>
 
     </div>

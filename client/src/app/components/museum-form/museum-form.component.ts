@@ -27,6 +27,7 @@ export class MuseumFormComponent implements OnInit {
     postalcode:"",
     colection_period:"",
     image: "",
+    ubication: "",
     created_at: new Date(),
   };
 

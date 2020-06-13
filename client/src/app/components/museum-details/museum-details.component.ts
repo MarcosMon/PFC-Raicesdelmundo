@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import {MuseumsService} from '../../services/museums.service'
 import {KpiService} from '../../services/kpi.service'
 import {Location} from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-museum-details',
@@ -22,9 +24,11 @@ export class MuseumDetailsComponent implements OnInit {
   };
 
   edit: boolean = false;
-  constructor( private activatedRoute: ActivatedRoute,
-    private MuseumsService:MuseumsService,private kpiService : KpiService, private location:Location) {
+  googleUbication: SafeResourceUrl;
 
+  constructor( private activatedRoute: ActivatedRoute,
+    private MuseumsService:MuseumsService,private kpiService : KpiService, private location:Location,
+    private sanitizer: DomSanitizer) {
 }
 
 
@@ -33,14 +37,16 @@ export class MuseumDetailsComponent implements OnInit {
     this.MuseumsService.getOneMuseum(params.id).subscribe(
       (res) => {
         this.museum = res;
-        console.log(res)
+        this.googleUbication =  this.sanitizer.bypassSecurityTrustResourceUrl(this.museum.ubication);
       },
       (err) => console.log(err)
     );
     this.getMuseumKPI();
 
   }
+sanitizerSecurity(){
 
+}
   getMuseumKPI(){
     const params = this.activatedRoute.snapshot.params;
     if (params.id) {
