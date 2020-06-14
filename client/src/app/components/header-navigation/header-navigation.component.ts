@@ -15,6 +15,8 @@ export class HeaderNavigationComponent implements OnInit {
   userID = localStorage.getItem('id');
   userRole = localStorage.getItem('userRole');
   allmuseums: any = [];
+  filter;
+  selectedOption: any;
 
 constructor( private UsersService: UsersService,
             private museumsService : MuseumsService,
@@ -33,6 +35,16 @@ constructor( private UsersService: UsersService,
 
     );
   }
+  options = [
+    { name: "All"},
+    { name: "Free"}
+  ];
+
+  public onValueChanged(selected: any): void {
+    this.selectedOption = selected;
+    console.log(this.selectedOption); // should display the selected option.
+  }
+
   logOut(){
     this.UsersService.logUserIn('false');
   }

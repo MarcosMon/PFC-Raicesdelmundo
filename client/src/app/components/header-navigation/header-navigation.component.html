@@ -17,12 +17,21 @@
                 <div id="myDropdown"  class="dropdown-content">
                   <input type="text" placeholder="Search" id="myInput" aria-describedby="button-addon2" class="form-control border-0 bg-light" (keyup)="filterFunction()">
                   <div *ngFor="let museum of allmuseums | slice:0:10" >
+                    <div *ngIf="this.selectedOption == 'Free' && museum.price == '0'">
                   <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
+                <div *ngIf="this.selectedOption == 'All'">
+                  <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
                 </div>
               </div>
               </div>
             </div>
           </div>
+          <select [(ngModel)]="selectedOption" (ngModelChange)="onValueChanged($event)">
+            <option [ngValue]="undefined" disabled>Filter</option>
+            <option *ngFor="let o of options" [ngValue]="o.name">{{o.name}}</option>
+          </select>
           <li class="nav-item">
             <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
           </li>
@@ -62,23 +71,36 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <div class=" bg-light rounded rounded-pill ">
+
             <div class="input-group">
               <div class="input-group-prepend">
                 <button id="button-addon2" type="submit" (click)="dropDownFunction()" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
               </div>
+
               <div class="dropdown">
                 <div id="myDropdown"  class="dropdown-content">
                   <input type="text" placeholder="Search" id="myInput" aria-describedby="button-addon2" class="form-control border-0 bg-light" (keyup)="filterFunction()">
                   <div *ngFor="let museum of allmuseums | slice:0:10" >
+                    <div *ngIf="this.selectedOption == 'Free' && museum.price == '0'">
                   <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
+                <div *ngIf="this.selectedOption == 'All'">
+                  <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
                 </div>
               </div>
               </div>
+
             </div>
           </div>
+          <select [(ngModel)]="selectedOption" (ngModelChange)="onValueChanged($event)">
+            <option [ngValue]="undefined" disabled>Filter</option>
+            <option *ngFor="let o of options" [ngValue]="o.name">{{o.name}}</option>
+          </select>
           <li class="nav-item">
             <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
           </li>
@@ -119,12 +141,21 @@
                 <div id="myDropdown"  class="dropdown-content">
                   <input type="text" placeholder="Search" id="myInput" aria-describedby="button-addon2" class="form-control border-0 bg-light" (keyup)="filterFunction()">
                   <div *ngFor="let museum of allmuseums | slice:0:10" >
+                    <div *ngIf="this.selectedOption == 'Free' && museum.price == '0'">
                   <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
+                <div *ngIf="this.selectedOption == 'All'">
+                  <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
                 </div>
               </div>
               </div>
             </div>
           </div>
+          <select [(ngModel)]="selectedOption" (ngModelChange)="onValueChanged($event)">
+            <option [ngValue]="undefined" disabled>Filter</option>
+            <option *ngFor="let o of options" [ngValue]="o.name">{{o.name}}</option>
+          </select>
           <li class="nav-item">
             <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
           </li>
