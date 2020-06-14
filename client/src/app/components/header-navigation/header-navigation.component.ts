@@ -13,6 +13,7 @@ export class HeaderNavigationComponent implements OnInit {
 
 
   userID = localStorage.getItem('id');
+  userRole = localStorage.getItem('userRole');
   allmuseums: any = [];
 
 constructor( private UsersService: UsersService,

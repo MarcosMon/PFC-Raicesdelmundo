@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   userID = localStorage.getItem('id');
+  userRole = localStorage.getItem('userRole');
+
 constructor( private UsersService: UsersService,
             private router : Router ) {
 

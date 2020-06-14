@@ -35,10 +35,25 @@ export class LoginComponent implements OnInit {
           console.log(this.mensaje.message.substring(10,11));
           localStorage.setItem('id', this.mensaje.message.substring(10,11));
           localStorage.setItem('usuario', this.mensaje.message.substring(11,30));
+          this.setUserRole(this.mensaje.message);
         }
 
       },
       (err) => console.log(err)
     );
+  }
+  setUserRole(userRole : any){
+
+    var valueRole = userRole.match('permissions|admin');
+
+    if(valueRole == null){
+      localStorage.setItem('userRole','normalUser' );
+    }
+    if(valueRole[0] == 'admin' ){
+      localStorage.setItem('userRole', 'admin' );
+    }
+    else{
+      localStorage.setItem('userRole', 'permissions' );
+    }
   }
 }

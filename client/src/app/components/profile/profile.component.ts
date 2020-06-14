@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class ProfileComponent implements OnInit {
 
-usuario : any = localStorage.getItem('usuario');
+usr : any = localStorage.getItem('usuario');
+user = this.usr.replace('permissions', '');
 constructor( private UsersService: UsersService ) {
 }
 

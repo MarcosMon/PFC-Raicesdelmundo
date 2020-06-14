@@ -13,7 +13,7 @@ class SignInController{
             
             Auth.compare(req.body.password,user.password).then((validUser) => {
                 if(validUser){
-                    res.json({message: 'respuesta ' + user.id + ' ' + user.username});    
+                    res.json({message: 'respuesta ' + user.id + ' ' + user.username + ' ' + user.user_role });    
                 }
                 else{
                     res.json({message: 'contraseña incorrecta'}); 
@@ -21,7 +21,7 @@ class SignInController{
            })
         }
         else{
-            res.json({message: 'El usuario ' + req.body.username + ' No existe' }); 
+            res.json({message: 'El usuario ' + req.body.username + ' no existe' }); 
 
         }
         

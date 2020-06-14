@@ -1,4 +1,4 @@
-<div *ngIf="this.isLogged() == 'true'">
+<div *ngIf="this.isLogged() == 'true' && (this.userRole == 'permissions' || this.userRole == 'admin') ">
 
   <header class="header">
 
@@ -34,6 +34,53 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" [routerLink]="['/users/kpi/', userID]" routerLinkActive="active"><span class="fa fa-bar-chart"></span> Charts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/tickets" routerLinkActive="active"><span class="fa fa-ticket"></span> Tickets</a>
+          </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active"><span class="fas fa-user"></span> Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink ="/museums" routerLinkActive="active" (click) ="logOut()"><span class="fas fa-sign-in-alt"></span> LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+</div>
+
+<div *ngIf="this.isLogged() == 'true' && this.userRole == 'normalUser' ">
+
+  <header class="header">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <div class=" bg-light rounded rounded-pill ">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button id="button-addon2" type="submit" (click)="dropDownFunction()" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+              </div>
+              <div class="dropdown">
+                <div id="myDropdown"  class="dropdown-content">
+                  <input type="text" placeholder="Search" id="myInput" aria-describedby="button-addon2" class="form-control border-0 bg-light" (keyup)="filterFunction()">
+                  <div *ngFor="let museum of allmuseums | slice:0:10" >
+                  <a [routerLink]="" (click)="showMuseum(museum.id)">{{museum.name}}</a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/tickets" routerLinkActive="active"><span class="fa fa-ticket"></span> Tickets</a>

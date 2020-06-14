@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
     username: "",
     password: "",
     fullname: "",
-    user_role: "admin",
+    user_role: "",
     created_at: new Date(),
   };
 
@@ -83,7 +83,6 @@ export class RegisterComponent implements OnInit {
 
         if (this.mensaje.message.includes("Usuario creado")) {
           this.router.navigate(["/login"]);
-          // this.UsersService.logUserIn();
         }
       },
       (err) => console.log(err)
