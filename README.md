@@ -140,7 +140,7 @@ La aplicación web se ha realizado con el patrón de arquitectura de software MV
 
 #### **6.Metodología de desarrollo utilizada**
 
-- La metodología de desarrollo utilizada ha sido la de prototipos:
+- La metodología de desarrollo utilizada ha sido la de iterativa y creciente:
 
  En esta se ha precisado la rápida representación gráfica para que el cliente tenga resultados visibles. De esta manera y con la retroalimentación del mismo, se van obteniendo mejoras futuras. Por eso, la página dispone de un sistema de tickets para recibir peticiones diversas de los mismos.
 
