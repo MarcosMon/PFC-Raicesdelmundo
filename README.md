@@ -141,20 +141,20 @@ La aplicación web se ha realizado con el patrón de arquitectura de software MV
 
 1. El proceso ha sido el siguiente para cada uno de los componentes de la aplicación:
 
-  1. Configuración del sistema.
-  2. Creación y estructuración de la BBDD.
-  3. Creación de Ruta y Controlador ( Back ).
-  4. Comprobación de que estas funcionan con POSTMAN ( Back ).
-  5. Creación del servicio en angular ( Front ).
-  6. Creación del componente en angular ( Front ).
-  7. Conectividad entre servicio y componente.
-  8. Creación de vista con bootstrap y css.
-  9. Comprobar funcionalidad.
+  - Configuración del sistema.
+  - Creación y estructuración de la BBDD.
+  - Creación de Ruta y Controlador ( Back ).
+  - Comprobación de que estas funcionan con POSTMAN ( Back ).
+  - Creación del servicio en angular ( Front ).
+  - Creación del componente en angular ( Front ).
+  - Conectividad entre servicio y componente.
+  - Creación de vista con bootstrap y css.
+  - Comprobar funcionalidad.
 
-1. El proyecto se ha dividido en dos ramas:
+2. El proyecto se ha dividido en dos ramas:
 
-  1. Master: Aquí se encuentra la versión final.
-  2. Develop: En este se ha trabajado en modo desarrollo.
+  - Master: Aquí se encuentra la versión final.
+  - Develop: En este se ha trabajado en modo desarrollo.
 
 #### **7.Diagrama de Gantt previo y final del desarrollo de la app**
 
