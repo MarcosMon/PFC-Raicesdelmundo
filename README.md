@@ -62,6 +62,10 @@ Usuario Regular
   - Como usuario regular, quiero poder usar el buscador y los filtros del mismo. V
 
   - Como usuario regular, quiero poder ver las rutas de los museos que tienen una correlación histórica entre ellos, para obtener la información que deseo. X
+  
+  - Justificación de objetivo no alcanzado:
+   - Falta de tiempo por contratiempos.
+
 
 #### **4. Testing**
 
