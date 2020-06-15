@@ -111,13 +111,15 @@ La aplicación web se ha realizado con el patrón de arquitectura de software MV
 
 - Arquitectura de la aplicación:
 
-![](RackMultipart20200615-4-7ndcjw_html_9c42496f6fc15a83.png)
+<img src="../master/img/MVC.png" class="card-img-top"
+                        alt="...">       
 
 - Diagrama de componentes:
 
 - Opcional: Diagrama E/R de la base de datos (o el que proceda).
 
-![](RackMultipart20200615-4-7ndcjw_html_e4353e25da1bd8a8.png)
+<img src="../master/img/BBDD.png" class="card-img-top"
+                        alt="...">       
 
 ####
 
@@ -161,18 +163,21 @@ Previo
 <img src="../master/img/tabla.png" class="card-img-top"
                         alt="...">
                         
-        
+<img src="../master/img/diagrama.png" class="card-img-top"
+                        alt="...">        
 
 Final
 
-![](RackMultipart20200615-4-7ndcjw_html_fcfb20ee9e8c64b7.png)
+<img src="../master/img/clocky.png" class="card-img-top"
+                        alt="...">       
 
 - Justificación del exceso de tiempo:
   - Este se ha producido por diversos contratiempos en la aplicación.
 
 #### **8.Clockify**
 
-![](RackMultipart20200615-4-7ndcjw_html_fcfb20ee9e8c64b7.png)
+<img src="../master/img/clocky.png" class="card-img-top"
+                        alt="...">       
 
 #### **9.Presupuesto**
 
