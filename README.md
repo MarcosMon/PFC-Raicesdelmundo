@@ -53,7 +53,7 @@ Usuario Regular
 
   - Como usuario regular, quiero poder navegar por los apartados de la página para poder obtener información. V
 
-  - Como usuario regular, quiero poder ver las mejores rutas para poder llegar al museo deseado. <span style="color:green">V</span>.
+  - Como usuario regular, quiero poder ver las mejores rutas para poder llegar al museo deseado. V
 
   - Como usuario regular, quiero poder comentar y valorar el museo, para poder dar mi opinión. V
 
