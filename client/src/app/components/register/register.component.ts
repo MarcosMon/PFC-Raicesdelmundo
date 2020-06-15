@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
     username: "",
     password: "",
     fullname: "",
-    user_role: "admin",
+    user_role: "",
     created_at: new Date(),
   };
 
@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private activateddRoute: ActivatedRoute,
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
@@ -78,12 +78,10 @@ export class RegisterComponent implements OnInit {
   saveNewUser() {
     this.UsersService.createUser(this.user).subscribe(
       (res) => {
-        console.log(res);
         this.mensaje = res;
 
         if (this.mensaje.message.includes("Usuario creado")) {
           this.router.navigate(["/login"]);
-          // this.UsersService.logUserIn();
         }
       },
       (err) => console.log(err)

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MuseumsService} from '../../services/museums.service'
-import {KpiService} from '../../services/kpi.service'
-import {Location} from '@angular/common';
+import { MuseumsService } from '../../services/museums.service'
+import { KpiService } from '../../services/kpi.service'
+import { Location } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -12,7 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./museum-details.component.css']
 })
 export class MuseumDetailsComponent implements OnInit {
-  museum:any = {};
+  museum: any = {};
   params = this.activatedRoute.snapshot.params;
 
   kpi: any = {
@@ -26,10 +26,10 @@ export class MuseumDetailsComponent implements OnInit {
   edit: boolean = false;
   googleUbication: SafeResourceUrl;
 
-  constructor( private activatedRoute: ActivatedRoute,
-    private MuseumsService:MuseumsService,private kpiService : KpiService, private location:Location,
+  constructor(private activatedRoute: ActivatedRoute,
+    private MuseumsService: MuseumsService, private kpiService: KpiService, private location: Location,
     private sanitizer: DomSanitizer) {
-}
+  }
 
 
   ngOnInit() {
@@ -37,17 +37,17 @@ export class MuseumDetailsComponent implements OnInit {
     this.MuseumsService.getOneMuseum(params.id).subscribe(
       (res) => {
         this.museum = res;
-        this.googleUbication =  this.sanitizer.bypassSecurityTrustResourceUrl(this.museum.ubication);
+        this.googleUbication = this.sanitizer.bypassSecurityTrustResourceUrl(this.museum.ubication);
       },
       (err) => console.log(err)
     );
     this.getMuseumKPI();
 
   }
-sanitizerSecurity(){
+  sanitizerSecurity() {
 
-}
-  getMuseumKPI(){
+  }
+  getMuseumKPI() {
     const params = this.activatedRoute.snapshot.params;
     if (params.id) {
       console.log(params.id);
@@ -76,24 +76,24 @@ sanitizerSecurity(){
     );
 
   }
-  updateMuseumKPI(webVisit : boolean){
+  updateMuseumKPI(webVisit: boolean) {
     delete this.kpi[0].name;
     delete this.kpi[0].user_id;
     this.kpi[0].id_museum = this.params.id;
-    if(webVisit){
-      this.kpi[0].webVisitClicks ++;
+    if (webVisit) {
+      this.kpi[0].webVisitClicks++;
     }
-    else{
-      this.kpi[0].webTicketBuy ++;
+    else {
+      this.kpi[0].webTicketBuy++;
     }
 
     this.kpiService.updateMuseumKPI(this.kpi[0].id_museum, this.kpi[0])
-    .subscribe(
-      res =>{
-        console.log(res);
-      },
-      err => console.log(err)
-    )
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => console.log(err)
+      )
   }
 
 

@@ -11,6 +11,8 @@ export class TicketsComponent implements OnInit {
   comment;
   type;
   subject;
+  tickets: any = {};
+
   selectedRow;
   countStatus;
   countType;
@@ -24,7 +26,7 @@ export class TicketsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private ticketService: TicketService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.ticketsList();
@@ -42,7 +44,6 @@ export class TicketsComponent implements OnInit {
     this.countType = [...commentList].reduce((a, { type }) => {
 
       a[type] = (a[type] || 0) + 1;
-      console.log(a);
       return a;
     }, {});
   }
@@ -57,9 +58,9 @@ export class TicketsComponent implements OnInit {
       (res) => {
         console.log(res);
         this.commentList = res;
-        if(this.userID != '2'){
-        this.countTicketStatus(this.commentList);
-        this.countTicketType(this.commentList);
+        if (this.userID != '2') {
+          this.countTicketStatus(this.commentList);
+          this.countTicketType(this.commentList);
         }
       },
       (err) => console.log(err)
@@ -70,9 +71,10 @@ export class TicketsComponent implements OnInit {
       (res) => {
         console.log(res);
         this.allTicketList = res;
-        if(this.userID == '2'){
-        this.countTicketStatus(this.allTicketList);
-        this.countTicketType(this.allTicketList);
+        this.tickets = res;
+        if (this.userID == '2') {
+          this.countTicketStatus(this.allTicketList);
+          this.countTicketType(this.allTicketList);
         }
       },
       (err) => console.log(err)
@@ -91,29 +93,31 @@ export class TicketsComponent implements OnInit {
     this.ticketService.createTicket(commentData).subscribe(
       (res) => {
         console.log(res);
+        this.ticketsList();
+        this.allTicketsList()
       },
       (err) => console.log(err)
     );
     this.comment = null;
-    this.ticketsList();
+
   }
 
-  updateTicketStatus(id:any, status : any, id_user : any){
+  updateTicketStatus(id: any, status: any, id_user: any, comment: any, subject: any, type: any) {
     let commentData: any = {
       id_user: id_user,
-      subject: this.subject,
+      subject: subject,
       status: status,
-      type: this.type,
-      comment: this.comment,
+      type: type,
+      comment: comment,
     };
     this.ticketService.updateTicketStatus(id, commentData)
-    .subscribe(
-      res =>{
-        console.log(res);
-      },
-      err => console.log(err)
-    )
-    this.allTicketsList();
+      .subscribe(
+        res => {
+          console.log(res);
+          this.allTicketsList();
+        },
+        err => console.log(err)
+      )
 
   }
 

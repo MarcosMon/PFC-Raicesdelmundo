@@ -16,16 +16,16 @@ export class MuseumFormComponent implements OnInit {
     user_id: this.userID,
     price: 0,
     description: "",
-    phone:"",
-    email:"",
-    website:"",
-    openinghours:"",
-    city:"",
-    ticket_purchase_page:"",
-    country:"",
-    direction:"",
-    postalcode:"",
-    colection_period:"",
+    phone: "",
+    email: "",
+    website: "",
+    openinghours: "",
+    city: "",
+    ticket_purchase_page: "",
+    country: "",
+    direction: "",
+    postalcode: "",
+    colection_period: "",
     image: "",
     ubication: "",
     created_at: new Date(),
@@ -33,12 +33,11 @@ export class MuseumFormComponent implements OnInit {
 
   edit: boolean = false;
 
-
   constructor(
     private MuseumsService: MuseumsService,
     private router: Router,
     private activateddRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     const params = this.activateddRoute.snapshot.params;
@@ -64,15 +63,15 @@ export class MuseumFormComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-  updateMuseum(){
+  updateMuseum() {
     delete this.museum.created_at;
     this.MuseumsService.updateMuseum(this.museum.id, this.museum)
-    .subscribe(
-      res =>{
-        console.log(res);
-        this.router.navigate(['/museums']);
-      },
-      err => console.log(err)
-    )
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/museums']);
+        },
+        err => console.log(err)
+      )
   }
 }
