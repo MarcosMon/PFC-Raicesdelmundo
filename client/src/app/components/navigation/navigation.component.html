@@ -1,7 +1,8 @@
 <div *ngIf="this.isLogged() == 'true' && (this.userRole == 'permissions' || this.userRole == 'admin') ">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -10,25 +11,31 @@
           <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/users/museums/', userID]" routerLinkActive="active"><span class="fa fa-building"></span> OwnMuseums</a>
+          <a class="nav-link" [routerLink]="['/users/museums/', userID]" routerLinkActive="active"><span
+              class="fa fa-building"></span> OwnMuseums</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" routerLink="/museums/add" routerLinkActive="active"><span class="fa fa-plus-circle"></span> Add</a>
+          <a class="nav-link" routerLink="/museums/add" routerLinkActive="active"><span
+              class="fa fa-plus-circle"></span> Add</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" [routerLink]="['/users/kpi/', userID]" routerLinkActive="active"><span class="fa fa-bar-chart"></span> Charts</a>
+          <a class="nav-link" [routerLink]="['/users/kpi/', userID]" routerLinkActive="active"><span
+              class="fa fa-bar-chart"></span> Charts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tickets" routerLinkActive="active"><span class="fa fa-ticket"></span> Tickets</a>
+          <a class="nav-link" routerLink="/tickets" routerLinkActive="active"><span class="fa fa-ticket"></span>
+            Tickets</a>
         </li>
       </ul>
 
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/profile" routerLinkActive="active"><span class="fas fa-user"></span> Profile</a>
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active"><span class="fas fa-user"></span>
+            Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink ="/museums" routerLinkActive="active" (click) ="logOut()"><span class="fas fa-sign-in-alt"></span> LogOut</a>
+          <a class="nav-link" routerLink="/museums" routerLinkActive="active" (click)="logOut()"><span
+              class="fas fa-sign-in-alt"></span> LogOut</a>
         </li>
       </ul>
     </div>
@@ -39,7 +46,8 @@
 <div *ngIf="this.isLogged() == 'true' && this.userRole == 'normalUser' ">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -48,16 +56,19 @@
           <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tickets" routerLinkActive="active"><span class="fa fa-ticket"></span> Tickets</a>
+          <a class="nav-link" routerLink="/tickets" routerLinkActive="active"><span class="fa fa-ticket"></span>
+            Tickets</a>
         </li>
       </ul>
 
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/profile" routerLinkActive="active"><span class="fas fa-user"></span> Profile</a>
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active"><span class="fas fa-user"></span>
+            Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink ="/museums" routerLinkActive="active" (click) ="logOut()"><span class="fas fa-sign-in-alt"></span> LogOut</a>
+          <a class="nav-link" routerLink="/museums" routerLinkActive="active" (click)="logOut()"><span
+              class="fas fa-sign-in-alt"></span> LogOut</a>
         </li>
       </ul>
     </div>
@@ -67,7 +78,8 @@
 
 <div *ngIf="this.isLogged() == 'false' || this.isLogged() == null">
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -75,16 +87,18 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/museums" routerLinkActive="active"><span class="fa fa-home"></span> Home</a>
         </li>
-    </ul>
+      </ul>
 
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/register" routerLinkActive="active"><span class="fas fa-user"></span> Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink ="/login" routerLinkActive="active"><span class="fas fa-sign-in-alt"></span> Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active"><span class="fas fa-user"></span> Sign
+            Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active"><span class="fas fa-sign-in-alt"></span>
+            Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </div>

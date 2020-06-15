@@ -18,19 +18,19 @@ export class HeaderNavigationComponent implements OnInit {
   selectedOption: any;
 
   options = [
-    { name: "All"},
-    { name: "Free"}
+    { name: "All" },
+    { name: "Free" }
   ];
 
-constructor( private UsersService: UsersService,
-            private museumsService : MuseumsService,
-            private router : Router ) {
-}
+  constructor(private UsersService: UsersService,
+    private museumsService: MuseumsService,
+    private router: Router) {
+  }
 
   ngOnInit() {
     this.getAllMuseums();
   }
-  getAllMuseums(){
+  getAllMuseums() {
     this.museumsService.getAllMuseums().subscribe(
       res => {
         this.allmuseums = res;
@@ -44,18 +44,18 @@ constructor( private UsersService: UsersService,
     console.log(this.selectedOption);
   }
 
-  logOut(){
+  logOut() {
     this.UsersService.logUserIn('false');
   }
-  isLogged(){
-    return <any> this.UsersService.isLogged();
+  isLogged() {
+    return <any>this.UsersService.isLogged();
   }
 
-   dropDownFunction() {
+  dropDownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
 
-   filterFunction() {
+  filterFunction() {
     // this.allmuseums = [...this.allmuseums.filter(element => element.name.includes(a))]
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
@@ -63,7 +63,7 @@ constructor( private UsersService: UsersService,
     let div = document.getElementById("myDropdown");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
-     let txtValue = a[i].textContent || a[i].innerText;
+      let txtValue = a[i].textContent || a[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         a[i].style.display = "";
       } else {
@@ -72,9 +72,9 @@ constructor( private UsersService: UsersService,
     }
 
   }
-  showMuseum(nombre:string){
+  showMuseum(nombre: string) {
 
-    this.router.navigate(['details/museums/',nombre]);
+    this.router.navigate(['details/museums/', nombre]);
   }
 
 

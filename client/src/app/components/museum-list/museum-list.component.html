@@ -1,15 +1,12 @@
-
 <app-header-navigation></app-header-navigation>
-<!-- Page Content -->
 <div class="container p-5">
   <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " *ngFor="let museum of allmuseums">
       <div class="card h-100">
-        <a [routerLink]="" (click)="showMuseum(museum.id)"><img class="card-img-top" [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt=""></a>
+        <a [routerLink]="" (click)="showMuseum(museum.id)"><img class="card-img-top"
+            [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt=""></a>
         <a [routerLink]="" (click)="showMuseum(museum.id)" class="centered">{{museum.name}}</a>
       </div>
     </div>
   </div>
-  <!-- /.row -->
 </div>
-<!-- /.container -->

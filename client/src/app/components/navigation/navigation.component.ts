@@ -12,21 +12,23 @@ export class NavigationComponent implements OnInit {
   userID = localStorage.getItem('id');
   userRole = localStorage.getItem('userRole');
 
-constructor( private UsersService: UsersService,
-            private router : Router ) {
+  constructor(private UsersService: UsersService,
+    private router: Router) {
 
-}
+  }
 
   ngOnInit() {
 
   }
-  logOut(){
+
+  logOut() {
     this.UsersService.logUserIn('false');
   }
-  isLogged(){
-    return <any> this.UsersService.isLogged();
+
+  isLogged() {
+    return <any>this.UsersService.isLogged();
   }
-  }
+}
 
 
 

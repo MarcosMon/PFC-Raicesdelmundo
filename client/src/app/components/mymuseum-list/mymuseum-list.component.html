@@ -1,10 +1,13 @@
 <app-navigation></app-navigation>
+
 <body>
   <div class="album py-5 ">
     <div class="container">
       <div *ngIf="this.error != 'false'">
         <div class="alert alert-warning alert-dismissible fade show text-center  " style="height: 10rem;" role="alert">
-          <p class="formato">{{error}}<p> Presione 'Add' si quiere añadir un Museo.</p><a class="nav-link" routerLink="/museums/add" routerLinkActive="active"><span class="fa fa-plus-circle"></span> Add</a>
+          <p class="formato">{{error}}
+          <p> Presione 'Add' si quiere añadir un Museo.</p><a class="nav-link" routerLink="/museums/add"
+            routerLinkActive="active"><span class="fa fa-plus-circle"></span> Add</a>
         </div>
       </div>
       <div class="row">
@@ -14,14 +17,17 @@
           <div class="card mb-4 box-shadow">
             <div class="card-header  bg-light text-black d-flex justify-content-center align-items-center">
               {{museum.name}}
-         </div>
+            </div>
             <img class="card-img-top" [src]="museum.image ? museum.image : 'assets/noimg.jpg'" alt="Card image cap">
             <div class="card-body">
               <div class="d-flex justify-content-center">
                 <div class="btn-group">
-                  <button type="button" (click)="showMuseum(museum.id)" class="btn btn-sm btn-outline-secondary m-1" >View</button>
-                  <button type="button" [routerLink]="['/museums/edit/', museum.id]" class="btn btn-sm btn-outline-secondary m-1">Edit</button>
-                  <button type="button" (click)="deleteMuseum(museum.id)" class="btn btn-sm btn-outline-secondary m-1">Delete</button>
+                  <button type="button" (click)="showMuseum(museum.id)"
+                    class="btn btn-sm btn-outline-secondary m-1">View</button>
+                  <button type="button" [routerLink]="['/museums/edit/', museum.id]"
+                    class="btn btn-sm btn-outline-secondary m-1">Edit</button>
+                  <button type="button" (click)="deleteMuseum(museum.id)"
+                    class="btn btn-sm btn-outline-secondary m-1">Delete</button>
                 </div>
               </div>
             </div>

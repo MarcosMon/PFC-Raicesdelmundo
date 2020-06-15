@@ -11,7 +11,7 @@ export class TicketsComponent implements OnInit {
   comment;
   type;
   subject;
-  tickets:any = {};
+  tickets: any = {};
 
   selectedRow;
   countStatus;
@@ -26,7 +26,7 @@ export class TicketsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private ticketService: TicketService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.ticketsList();
@@ -58,9 +58,9 @@ export class TicketsComponent implements OnInit {
       (res) => {
         console.log(res);
         this.commentList = res;
-        if(this.userID != '2'){
-        this.countTicketStatus(this.commentList);
-        this.countTicketType(this.commentList);
+        if (this.userID != '2') {
+          this.countTicketStatus(this.commentList);
+          this.countTicketType(this.commentList);
         }
       },
       (err) => console.log(err)
@@ -72,9 +72,9 @@ export class TicketsComponent implements OnInit {
         console.log(res);
         this.allTicketList = res;
         this.tickets = res;
-        if(this.userID == '2'){
-        this.countTicketStatus(this.allTicketList);
-        this.countTicketType(this.allTicketList);
+        if (this.userID == '2') {
+          this.countTicketStatus(this.allTicketList);
+          this.countTicketType(this.allTicketList);
         }
       },
       (err) => console.log(err)
@@ -102,7 +102,7 @@ export class TicketsComponent implements OnInit {
 
   }
 
-  updateTicketStatus(id:any, status : any, id_user : any, comment : any, subject : any , type : any){
+  updateTicketStatus(id: any, status: any, id_user: any, comment: any, subject: any, type: any) {
     let commentData: any = {
       id_user: id_user,
       subject: subject,
@@ -111,13 +111,13 @@ export class TicketsComponent implements OnInit {
       comment: comment,
     };
     this.ticketService.updateTicketStatus(id, commentData)
-    .subscribe(
-      res =>{
-        console.log(res);
-        this.allTicketsList();
-      },
-      err => console.log(err)
-    )
+      .subscribe(
+        res => {
+          console.log(res);
+          this.allTicketsList();
+        },
+        err => console.log(err)
+      )
 
   }
 
