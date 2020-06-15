@@ -121,6 +121,9 @@ La aplicación web se ha realizado con el patrón de arquitectura de software MV
 
 - Diagrama de componentes:
 
+<img src="../master/img/componentes.png" class="card-img-top"
+                        alt="...">  
+
 - Opcional: Diagrama E/R de la base de datos (o el que proceda).
 
 <img src="../master/img/BBDD.png" class="card-img-top"
