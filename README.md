@@ -158,20 +158,10 @@ La aplicación web se ha realizado con el patrón de arquitectura de software MV
 
 Previo
 
-| Dedicación semanal prevista hrs/semanas(25h)Dedicación diaria prevista hrs/días(5h) |
- |
-| --- | --- |
-| Fase | Estimación temporal ( en horas) |
-| Generación de la idea | 10h |
-| Diseño del sistema | 15h |
-| Diseño de la base de Datos e implementación | 10h |
-| Maquetación | 20h |
-| Codificación | 20h |
-| Pruebas | 15h |
-| Documentación | 10h |
-| TOTAL | 100h |
-
-![](RackMultipart20200615-4-7ndcjw_html_b62d5d5394ef165b.png)
+<img src="../master/img/tabla.png" class="card-img-top"
+                        alt="...">
+                        
+        
 
 Final
 
