@@ -187,3 +187,12 @@ Final
 #### **9.Presupuesto**
 
 #### **10.Conclusiones**
+
+-Posibles mejoras:
+ -Utilizar la API de google para poder realizar la traducción de un idioma a otro.
+ -Crear componente de correlación entre museos, teniendo en cuenta la etapa histórica
+ -Mejorar el código
+ -Insetar más información de museos con alguna API de pago, ya que las públicas carecen de información.
+ -Realizar casos test
+ -Ir implementando ante las peticiones de los usuarios
+ 
