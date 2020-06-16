@@ -189,6 +189,9 @@ Final
 
 #### **9.Presupuesto**
 
+<img src="../master/img/PRESU.png" class="card-img-top"
+                        alt="...">     
+
 #### **10.Conclusiones**
 
 - Posibles mejoras:
